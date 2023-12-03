@@ -1,29 +1,41 @@
 {
-  "workers":[
+  "workers": [
     {
-      "id":1,
+      "id": 1,
       "imie": "Andrzej",
       "nazwisko": "Benek"
     },
     {
-      "id":2,
+      "id": 2,
       "imie": "Kamil",
       "nazwisko": "Starachowic"
     },
     {
-      "id":3,
+      "id": 3,
       "imie": "Ela",
       "nazwisko": "But"
     },
     {
-      "id":4,
+      "id": 4,
       "imie": "Jarek",
       "nazwisko": "Pasza"
     },
     {
-      "id":5,
+      "id": 5,
       "imie": "Olaf",
       "nazwisko": "Topór"
+    },
+    {
+      "imie": "Romek",
+      "nazwisko": "Igielnicki",
+      "haslo": "zlew",
+      "id": 6
+    },
+    {
+      "imie": "arek",
+      "nazwisko": "Szybki",
+      "haslo": "Tajne",
+      "id": 7
     }
   ]
 }

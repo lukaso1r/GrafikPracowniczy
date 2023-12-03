@@ -10,6 +10,7 @@ import { LoginManagerComponent } from './login-manager/login-manager.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ListWorkersComponent } from './list-workers/list-workers.component';
 import { AddWorkerComponent } from './add-worker/add-worker.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AddWorkerComponent } from './add-worker/add-worker.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     provideClientHydration()

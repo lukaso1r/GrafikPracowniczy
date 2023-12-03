@@ -1,15 +1,18 @@
 <div id="loginDiv">
-  <h3>Zaloguj się jako pracownik</h3>
-  <form class="form-column">
-    <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Jan">
-    <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Kowalski">
-    <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Hasło">
+  <h3>Dodaj pracownika</h3>
+  
+  <form class="form-column" [formGroup]="addWorker" (ngSubmit)="SaveData()">
+    <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="imie" formControlName="imie" placeholder="Jan">
+    <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="nazwisko" formControlName="nazwisko" placeholder="Kowalski">
+    <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="haslo" formControlName="haslo" placeholder="Ustaw hasło">
     <!-- <div class="form-check mb-2 mr-sm-2">
       <input class="form-check-input" type="checkbox" id="inlineFormCheck">
       <label class="form-check-label" for="inlineFormCheck">Remember me</label>
     </div> -->
-    <!-- <button type="submit" class="btn btn-primary mb-2">Zaloguj</button> -->
-    <!-- Poniżej button testowy - tylko do sprawdzania funkcji -->
-    <button  class="btn btn-primary mb-2">Zaloguj</button>
+    <button type="submit" class="btn btn-primary mb-2">Dodaj pracownika</button>
+
+
   </form>
+
+
 </div>
