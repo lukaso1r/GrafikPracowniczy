@@ -24,9 +24,14 @@ export class ListWorkersComponent implements OnInit{
     });
   }
 
-  deleteWorker(id: number){
-    alert("usunięto użytkownika: " + this.workerData[id].imie + " "+ this.workerData[id].nazwisko + " id: " + this.workerData[id].id);
-    
+  deleteWorker(workerId: number){
+    let foundWorker = this.workerData.find((w: { id: number; }) => w.id === workerId);
+    alert("usnięto: " + foundWorker.imie + " "+ foundWorker.nazwisko + " o id: " + workerId);
+    console.log(this.workerData);
+    this.worker.deleteWorker(workerId).subscribe((result) => {
+      console.log(result);
+      this.ngOnInit();
+    });
   }
 
 }

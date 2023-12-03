@@ -14,7 +14,7 @@
         <th scope="row">{{item.id}}</th>
         <td>{{item.imie}}</td>
         <td>{{item.nazwisko}}</td>
-        <td><button (click)="deleteWorker(item.id)" type="button">Usuń z listy</button>  <button type="button">Edytuj</button></td>
+        <td style="display: flex; flex-direction: row; align-items: center;"><button style="display: flex; flex-direction: row; align-items: center; margin-right: 10px;" (click)="deleteWorker(item.id)" type="button">Usuń z listy <i style="display: flex; align-items: center; padding-left: 5px;" class="fi fi-rr-trash"></i></button>  <button type="button">Edytuj</button></td>
       </tr>
     </tbody>
   </table>

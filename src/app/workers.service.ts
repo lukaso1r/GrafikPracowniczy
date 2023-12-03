@@ -17,4 +17,8 @@ export class WorkersService {
     console.log(data);
     return this.http.post(this.url, data);
   }
+
+  deleteWorker(id:number){
+    return this.http.delete(`${this.url}/${id}`)
+  }
 }

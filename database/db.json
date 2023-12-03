@@ -11,43 +11,27 @@
       "nazwisko": "Starachowic"
     },
     {
-      "id": 3,
-      "imie": "Ela",
-      "nazwisko": "But"
-    },
-    {
       "id": 4,
       "imie": "Jarek",
       "nazwisko": "Pasza"
     },
     {
-      "id": 5,
-      "imie": "Olaf",
-      "nazwisko": "Topór"
+      "imie": "OlaF",
+      "nazwisko": "Topór",
+      "haslo": "groźny",
+      "id": 5
     },
     {
-      "imie": "Romek",
-      "nazwisko": "Igielnicki",
-      "haslo": "zlew",
+      "imie": "Kasia",
+      "nazwisko": "Małecka",
+      "haslo": "Kwiatek",
       "id": 6
     },
     {
-      "imie": "arek",
-      "nazwisko": "Szybki",
-      "haslo": "Tajne",
+      "imie": "Radosław",
+      "nazwisko": "Miły",
+      "haslo": "XD",
       "id": 7
-    },
-    {
-      "imie": "",
-      "nazwisko": "",
-      "haslo": "",
-      "id": 8
-    },
-    {
-      "imie": "Harry",
-      "nazwisko": "Potter",
-      "haslo": "voldermord",
-      "id": 9
     }
   ]
 }
