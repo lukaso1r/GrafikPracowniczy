@@ -1,4 +1,4 @@
-<div id="loginWorkerDiv" *ngIf='loginStatus == false'>
+<div id="loginDiv" *ngIf='loginStatus == false'>
   <h3>Zaloguj się jako manager</h3>
   <form class="form-column">
     <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Jan">
@@ -13,8 +13,19 @@
     <button (click)="zalogowano()" class="btn btn-primary mb-2">Zaloguj</button>
   </form>
 </div>
+<hr>
+<div id="manager-panel" *ngIf='loginStatus == true'>
+  <h2>Panel zarządzania</h2>
+  <div id="managerMenu">
+    <button (click)="changeOutPutActiveList()" type="button" class="btn btn-primary mb-2">Wyświetl listę pracowników</button>
+    <button (click)="changeOutPutActiveList()" type="button" class="btn btn-primary mb-2">Dodaj Pracownika</button>
+    <button (click)="changeOutPutActiveList()" type="button" class="btn btn-primary mb-2">Przejdź do kalendarza</button>
+    <button (click)="changeOutPutActiveList()" type="button" class="btn btn-primary mb-2">Wyloguj</button>
+  </div>
+  <div id="managerPanelOutput">
+    <app-list-workers id="showWorkerListStatus" *ngIf='showWorkerListStatus == true'></app-list-workers>
+    <div id="showAddWorkerStatus" *ngIf='showAddWorkerStatus == true'>showAddWorkerStatus</div>
+    <div id="showCalencdarStatus" *ngIf='showCalencdarStatus == true'>showCalencdarStatus</div>
+  </div>
 
-<div id="workers-list-div" *ngIf='loginStatus == true'>
-  <button (click)="changeShowWorkersListStatus()" type="button">Wyświetl listę pracowników</button>
-    <app-list-workers *ngIf='showWorkerListStatus == true'></app-list-workers>
 </div>

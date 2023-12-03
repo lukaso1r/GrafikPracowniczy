@@ -27,3 +27,15 @@
 #buttons-home-page #second-homepage-btn:hover{
   transform: scaleX(1) scaleY(1) scaleZ(1) rotateX(0deg) rotateY(180deg) rotateZ(0deg) translateX(0px) translateY(0px) translateZ(0px) skewX(0deg) skewY(0deg);
 }
+
+#loginAs{
+  width: 100%;
+}
+
+#loginAsWorker{
+  width: 100%;
+}
+
+#loginAsManager{
+  width: 100%;
+}

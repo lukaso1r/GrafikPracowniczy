@@ -1,18 +1,21 @@
-<h3>Lista pracowników:</h3>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Imię</th>
-      <th scope="col">Nazwisko</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of workerData">
-      <th scope="row">{{item.id}}</th>
-      <td>{{item.imie}}</td>
-      <td>{{item.nazwisko}}</td>
-      <td><button type="button">Usuń z listy</button></td>
-    </tr>
-  </tbody>
-</table>
+<div id="WorkersListDiv">
+  <h3>Lista pracowników:</h3>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Numer</th>
+        <th scope="col">Imię</th>
+        <th scope="col">Nazwisko</th>
+        <th scope="col">Operacja</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of workerData">
+        <th scope="row">{{item.id}}</th>
+        <td>{{item.imie}}</td>
+        <td>{{item.nazwisko}}</td>
+        <td><button type="button">Usuń z listy</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

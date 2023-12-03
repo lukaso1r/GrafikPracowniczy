@@ -9,6 +9,7 @@ import { LoginWorkerComponent } from './login-worker/login-worker.component';
 import { LoginManagerComponent } from './login-manager/login-manager.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ListWorkersComponent } from './list-workers/list-workers.component';
+import { AddWorkerComponent } from './add-worker/add-worker.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ListWorkersComponent } from './list-workers/list-workers.component';
     LoginPageComponent,
     LoginWorkerComponent,
     LoginManagerComponent,
-    ListWorkersComponent
+    ListWorkersComponent,
+    AddWorkerComponent
   ],
   imports: [
     BrowserModule,

@@ -9,6 +9,14 @@ export class LoginManagerComponent implements OnInit{
 
   loginStatus: boolean = false;
   showWorkerListStatus: boolean = false;
+  showAddWorkerStatus: boolean = false;
+  showCalencdarStatus: boolean = false;
+
+  outPutActiveList: boolean[] = [
+    this.showWorkerListStatus,
+    this.showAddWorkerStatus,
+    this.showCalencdarStatus
+  ];
 
   constructor(){
     this.loginStatus = false;
@@ -28,6 +36,10 @@ export class LoginManagerComponent implements OnInit{
 
   changeShowWorkersListStatus(){
     this.showWorkerListStatus = true;
+  }
+
+  changeOutPutActiveList(){
+    console.log("haha");
   }
 
 }
