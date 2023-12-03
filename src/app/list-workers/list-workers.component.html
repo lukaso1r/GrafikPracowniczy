@@ -14,8 +14,31 @@
         <th scope="row">{{item.id}}</th>
         <td>{{item.imie}}</td>
         <td>{{item.nazwisko}}</td>
-        <td style="display: flex; flex-direction: row; align-items: center;"><button style="display: flex; flex-direction: row; align-items: center; margin-right: 10px;" (click)="deleteWorker(item.id)" type="button">Usuń z listy <i style="display: flex; align-items: center; padding-left: 5px;" class="fi fi-rr-trash"></i></button>  <button type="button">Edytuj</button></td>
+        <td style="display: flex; flex-direction: row; align-items: center;">
+          <button style="display: flex; flex-direction: row; align-items: center; margin-right: 10px;" (click)="deleteWorker(item.id)" type="button">Usuń z listy <i style="display: flex; align-items: center; padding-left: 5px;" class="fi fi-rr-trash"></i></button>
+          <button type="button" (click)="editWorker(item.id)">Edytuj</button></td>
       </tr>
     </tbody>
   </table>
+
+  <div id="editWorkerPopUp" *ngIf="editWorkerPopUp==true">
+    <h3>Edytuj pracownika</h3>
+    <form class="form-column" [formGroup]="editWorkerForm" (ngSubmit)="SaveDataEditWorker()">
+      <label for="imie">Imię:</label>
+      <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="imie" formControlName="imie" required>
+      <label for="nazwisko">Nazwisko:</label>
+      <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="nazwisko" formControlName="nazwisko" required>
+      <label for="haslo">Haslo:</label>
+      <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="haslo" formControlName="haslo" required>
+      <button type="submit" class="btn btn-primary mb-2">Edytuj pracownika</button>
+    </form>
+    <button (click)="stopEdit()">Anuluj</button>
+  </div>
 </div>
+
+<div class="alert alert-success" role="alert" *ngIf="this.succesStateFlag == true">
+  Poprawnie dodano pracownika <button (click)="this.succesStateFlag = false">X</button>
+</div>
+
+
+<!-- [formGroup]="editWorker" (ngSubmit)="SaveData()" -->

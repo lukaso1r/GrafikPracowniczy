@@ -1,21 +1,17 @@
 <div id="loginDiv" *ngIf='loginStatus == false'>
   <h3>Zaloguj się jako manager</h3>
-  <form class="form-column">
-    <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName1" placeholder="Jan">
-    <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Kowalski">
-    <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputPassword" placeholder="Hasło">
-    <!-- <div class="form-check mb-2 mr-sm-2">
-      <input class="form-check-input" type="checkbox" id="inlineFormCheck">
-      <label class="form-check-label" for="inlineFormCheck">Remember me</label>
-    </div> -->
-    <!-- <button type="submit" class="btn btn-primary mb-2">Zaloguj</button> -->
-    <!-- Poniżej button testowy - tylko do sprawdzania funkcji -->
-    <button (click)="zalogowano()" class="btn btn-primary mb-2">Zaloguj</button>
+
+  <form class="form-column" [formGroup]="loginAsManager" (ngSubmit)="loginAsManagerFunc()">
+    <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="imie" formControlName="imie" placeholder="Wpisz imię" required>
+    <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="nazwisko" formControlName="nazwisko" placeholder="Wpisz nazwisko" required>
+    <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="haslo" formControlName="haslo" placeholder="Wpisz hasło" required>
+    <button type="submit" class="btn btn-primary mb-2">Zaloguj się</button>
   </form>
 </div>
-<hr>
+
 <div id="manager-panel" *ngIf='loginStatus == true'>
-  <h2>Panel zarządzania</h2>
+  <hr>
+  <h2>Panel zarządzania - {{loggedManagerInfo}}</h2>
   <div id="managerMenu">
     <button id="showWorkerListStatus" (click)="changeOutPutActiveList('0')" type="button" class="btn btn-primary mb-2">Wyświetl listę pracowników</button>
     <button id="showAddWorkerStatus" (click)="changeOutPutActiveList('1')" type="button" class="btn btn-primary mb-2">Dodaj Pracownika</button>

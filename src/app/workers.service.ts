@@ -7,10 +7,16 @@ import { HttpClient} from '@angular/common/http';
 export class WorkersService {
 
   url = "http://localhost:3000/workers/";
+  urlManagers = "http://localhost:3000/managers/";
 
   constructor(private http:HttpClient) { }
+
   getAllWorkers(){
     return this.http.get(this.url);
+  }
+
+  getAllManagers(){
+    return this.http.get(this.urlManagers);
   }
 
   saveWorkerData(data:any){
@@ -20,5 +26,9 @@ export class WorkersService {
 
   deleteWorker(id:number){
     return this.http.delete(`${this.url}/${id}`)
+  }
+
+  updateWorkerData(id: number, data:any){
+    return this.http.put(`${this.url}/${id}`, data);
   }
 }

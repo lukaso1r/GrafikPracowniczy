@@ -32,6 +32,34 @@
       "nazwisko": "Miły",
       "haslo": "XD",
       "id": 7
+    },
+    {
+      "imie": "Jerzy",
+      "nazwisko": "Daniell",
+      "haslo": "samochodzik",
+      "id": 8
+    },
+    {
+      "imie": "Jerzy",
+      "nazwisko": "jerz",
+      "haslo": "orotografia",
+      "id": 9
+    }
+  ],
+  "managers": [
+    {
+      "id": 1,
+      "imie": "Łukasz",
+      "nazwisko": "Kaliszewicz",
+      "stanowisko": "Młodszy Maanger",
+      "haslo": "haslo"
+    },
+    {
+      "id": 2,
+      "imie": "admin",
+      "nazwisko": "",
+      "stanowisko": "",
+      "haslo": ""
     }
   ]
 }

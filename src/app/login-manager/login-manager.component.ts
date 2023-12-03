@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {FormGroup, FormControl} from '@angular/forms';
+import {WorkersService} from '../workers.service';
 
 @Component({
   selector: 'app-login-manager',
@@ -14,7 +16,7 @@ export class LoginManagerComponent implements OnInit{
 
   outPutActiveList: boolean[];
 
-  constructor(){
+  constructor(private manager:WorkersService){
 
     this.loginStatus = false;
     this.showWorkerListStatus = false;
@@ -27,6 +29,10 @@ export class LoginManagerComponent implements OnInit{
       this.showCalencdarStatus
     ];
   }
+
+  loginAsManager = new FormGroup({imie: new FormControl(''), nazwisko: new FormControl(''), haslo: new FormControl('')});
+  managersData: any=[];
+  loggedManagerInfo: string = "";
 
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
@@ -43,14 +49,25 @@ export class LoginManagerComponent implements OnInit{
       this.showCalencdarStatus
     ];
 
+    this.manager.getAllManagers().subscribe((allManagers)=>{
+      console.log(allManagers);
+      this.managersData = allManagers;
+    });
+
   }
 
-  zalogowano(){
+  loginAsManagerFunc(){
+    console.log(this.loginAsManager.value);
+    let ifManagerExist = this.managersData.some((obj: { imie: string; nazwisko: string; haslo: string; }) =>
+      obj.imie === this.loginAsManager.value.imie && obj.nazwisko === this.loginAsManager.value.nazwisko && obj.haslo === this.loginAsManager.value.haslo
+    );
+    if(ifManagerExist){
       this.loginStatus = true;
-  }
-
-  changeShowWorkersListStatus(){
-    this.showWorkerListStatus = true;
+      this.loggedManagerInfo = this.loginAsManager.value.imie + " " + this.loginAsManager.value.nazwisko ;
+      this.loginAsManager.reset({});
+    }else{
+      alert("Podano złe dane");
+    }
   }
 
   changeOutPutActiveList(buttonId: string){
