@@ -1,0 +1,24 @@
+{
+  "workers":[
+    {
+      "imię": "Andrzej",
+      "nazwisko": "Benek"
+    },
+    {
+      "imię": "Kamil",
+      "nazwisko": "Starachowic"
+    },
+    {
+      "imię": "Ela",
+      "nazwisko": "But"
+    },
+    {
+      "imię": "Jarek",
+      "nazwisko": "Pasza"
+    },
+    {
+      "imię": "Olaf",
+      "nazwisko": "Topór"
+    }
+  ]
+}

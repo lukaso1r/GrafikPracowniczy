@@ -1,0 +1,9 @@
+<div id="buttons-home-page">
+  <button (click)="loginWorker()" type="button">Jestem Pracownikiem</button>
+  <button (click)="loginManager()" type="button">Jestem Managerem</button>
+</div>
+
+<div id="loginAs">
+  <div id="loginAsWorker" *ngIf='selected == "worker"'><app-login-worker></app-login-worker></div>
+  <div id="loginAsManager" *ngIf="selected == 'manager'"><app-login-manager></app-login-manager></div>
+</div>

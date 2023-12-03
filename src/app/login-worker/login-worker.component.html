@@ -1,0 +1,15 @@
+<div id="loginWorkerDiv" *ngIf='loginStatus == false'>
+  <h3>Zaloguj się jako pracownik</h3>
+  <form class="form-column">
+    <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Jan">
+    <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Kowalski">
+    <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Hasło">
+    <!-- <div class="form-check mb-2 mr-sm-2">
+      <input class="form-check-input" type="checkbox" id="inlineFormCheck">
+      <label class="form-check-label" for="inlineFormCheck">Remember me</label>
+    </div> -->
+    <!-- <button type="submit" class="btn btn-primary mb-2">Zaloguj</button> -->
+    <!-- Poniżej button testowy - tylko do sprawdzania funkcji -->
+    <button (click)="zalogowano()" class="btn btn-primary mb-2">Zaloguj</button>
+  </form>
+</div>

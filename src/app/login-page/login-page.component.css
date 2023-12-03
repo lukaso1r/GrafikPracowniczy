@@ -1,0 +1,29 @@
+#buttons-home-page{
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:space-between;
+  padding: 1%;
+}
+#buttons-home-page button{
+  color: white;
+  /* height: 50px; */
+  padding: 2% 5%;
+  width: auto;
+  font-size: 1vw;
+  font-weight: 500;
+  background-color: #023E8A;
+  border: 2px solid white;
+  border-radius: 60px;
+}
+#buttons-home-page button:hover{
+  background-color: #03045E;
+  transition: 0.5s;
+}
+#buttons-home-page #first-homepage-btn:hover{
+  transform: scaleX(1) scaleY(1) scaleZ(1) rotateX(180deg) rotateY(0deg) rotateZ(0deg) translateX(0px) translateY(0px) translateZ(0px) skewX(0deg) skewY(0deg);
+}
+#buttons-home-page #second-homepage-btn:hover{
+  transform: scaleX(1) scaleY(1) scaleZ(1) rotateX(0deg) rotateY(180deg) rotateZ(0deg) translateX(0px) translateY(0px) translateZ(0px) skewX(0deg) skewY(0deg);
+}
