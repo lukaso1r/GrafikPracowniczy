@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class LoginManagerComponent implements OnInit{
 
   loginStatus: boolean = false;
+  showWorkerListStatus: boolean = false;
 
   constructor(){
     this.loginStatus = false;
@@ -17,11 +18,16 @@ export class LoginManagerComponent implements OnInit{
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
     this.loginStatus = false;
+    this.showWorkerListStatus = false;
 
   }
 
   zalogowano(){
       this.loginStatus = true;
+  }
+
+  changeShowWorkersListStatus(){
+    this.showWorkerListStatus = true;
   }
 
 }

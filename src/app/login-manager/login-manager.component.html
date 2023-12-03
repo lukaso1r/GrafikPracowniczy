@@ -15,5 +15,6 @@
 </div>
 
 <div id="workers-list-div" *ngIf='loginStatus == true'>
-    <app-list-workers></app-list-workers>
+  <button (click)="changeShowWorkersListStatus()" type="button">Wyświetl listę pracowników</button>
+    <app-list-workers *ngIf='showWorkerListStatus == true'></app-list-workers>
 </div>

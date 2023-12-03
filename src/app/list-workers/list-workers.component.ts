@@ -12,11 +12,14 @@ export class ListWorkersComponent implements OnInit{
 
   }
 
+  workerData:any=[];
+
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
     this.worker.getAllWorkers().subscribe((allData)=>{
       console.log(allData);
+      this.workerData = allData;
     });
   }
 

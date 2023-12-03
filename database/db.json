@@ -1,23 +1,28 @@
 {
   "workers":[
     {
-      "imię": "Andrzej",
+      "id":1,
+      "imie": "Andrzej",
       "nazwisko": "Benek"
     },
     {
-      "imię": "Kamil",
+      "id":2,
+      "imie": "Kamil",
       "nazwisko": "Starachowic"
     },
     {
-      "imię": "Ela",
+      "id":3,
+      "imie": "Ela",
       "nazwisko": "But"
     },
     {
-      "imię": "Jarek",
+      "id":4,
+      "imie": "Jarek",
       "nazwisko": "Pasza"
     },
     {
-      "imię": "Olaf",
+      "id":5,
+      "imie": "Olaf",
       "nazwisko": "Topór"
     }
   ]
