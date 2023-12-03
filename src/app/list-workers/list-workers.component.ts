@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, numberAttribute } from '@angular/core';
 import {WorkersService} from '../workers.service'
+
 
 @Component({
   selector: 'app-list-workers',
@@ -21,6 +22,11 @@ export class ListWorkersComponent implements OnInit{
       console.log(allData);
       this.workerData = allData;
     });
+  }
+
+  deleteWorker(id: number){
+    alert("usunięto użytkownika: " + this.workerData[id].imie + " "+ this.workerData[id].nazwisko + " id: " + this.workerData[id].id);
+    
   }
 
 }

@@ -9,8 +9,10 @@ import {WorkersService} from '../workers.service';
 })
 export class AddWorkerComponent implements OnInit {
 
-  constructor(private worker:WorkersService){
+  succesStateFlag: boolean;
 
+  constructor(private worker:WorkersService){
+    this.succesStateFlag = false;
   }
 
   addWorker = new FormGroup({imie: new FormControl(''), nazwisko: new FormControl(''), haslo: new FormControl('')});
@@ -21,9 +23,17 @@ export class AddWorkerComponent implements OnInit {
 
   SaveData(){
     console.log(this.addWorker.value);
-    this.worker.saveWorkerData(this.addWorker.value).subscribe((result)=>{
+    if (!this.addWorker.value.imie || !this.addWorker.value.nazwisko || !this.addWorker.value.haslo) {
+      alert("Puste pole");
+      return; // Przerwij wykonywanie funkcji, jeśli pole jest puste
+    }else{
+      this.worker.saveWorkerData(this.addWorker.value).subscribe((result)=>{
       console.log(result);
+      this.succesStateFlag = true;
+      this.addWorker.reset({});
     });
+    }
+
   }
 
 

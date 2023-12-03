@@ -1,6 +1,6 @@
 <div id="WorkersListDiv">
   <h3>Lista pracowników:</h3>
-  <table class="table table-striped">
+  <table class="table table-striped" style="width: 100%; margin: 0 auto;">
     <thead>
       <tr>
         <th scope="col">Numer</th>
@@ -14,7 +14,7 @@
         <th scope="row">{{item.id}}</th>
         <td>{{item.imie}}</td>
         <td>{{item.nazwisko}}</td>
-        <td><button type="button">Usuń z listy</button></td>
+        <td><button (click)="deleteWorker(item.id)" type="button">Usuń z listy</button>  <button type="button">Edytuj</button></td>
       </tr>
     </tbody>
   </table>

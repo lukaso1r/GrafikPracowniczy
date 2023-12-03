@@ -36,6 +36,18 @@
       "nazwisko": "Szybki",
       "haslo": "Tajne",
       "id": 7
+    },
+    {
+      "imie": "",
+      "nazwisko": "",
+      "haslo": "",
+      "id": 8
+    },
+    {
+      "imie": "Harry",
+      "nazwisko": "Potter",
+      "haslo": "voldermord",
+      "id": 9
     }
   ]
 }
