@@ -44,6 +44,12 @@
       "nazwisko": "jerz",
       "haslo": "orotografia",
       "id": 9
+    },
+    {
+      "imie": "Orzeł",
+      "nazwisko": "Bielik",
+      "haslo": "szybki",
+      "id": 10
     }
   ],
   "managers": [

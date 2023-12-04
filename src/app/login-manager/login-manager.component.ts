@@ -79,7 +79,7 @@ export class LoginManagerComponent implements OnInit{
     if (index !== -1) {
       this.outPutActiveList[index] = true;
     }
-    console.log(this.outPutActiveList)
+    console.log(this.outPutActiveList);
 
   }
 

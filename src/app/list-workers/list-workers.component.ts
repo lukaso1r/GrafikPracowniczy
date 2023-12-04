@@ -64,7 +64,7 @@ export class ListWorkersComponent implements OnInit{
   }
 
   stopEdit(){
-    this.editWorkerPopUp = false
+    this.editWorkerPopUp = false;
     this.foundWorkerToEdit = null;
   }
 
