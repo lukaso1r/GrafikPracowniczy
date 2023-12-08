@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 #Uruchamianie:
 
-Za pomocą visual studio code i dwóch terminali
+Za pomocą visual studio code i dwóch terminali<br>
 1 terminal, należy się znajdować w katalogu głównym aplikacji i wpisać:
 <code>"npx ng serve"</code><br>
 2 terminal, należy się znajdować w katalogu "database" i wpisać:
