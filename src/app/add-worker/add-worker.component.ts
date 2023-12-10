@@ -31,8 +31,7 @@ export class AddWorkerComponent implements OnInit {
     ]),
      email: new FormControl('', [
       Validators.required,
-      Validators.email,
-      Validators.minLength(5),
+      Validators.pattern('[A-Za-z0-9]+@[A-Za-z0-9]+\.[A-Za-z0-9]+'),
     ]),
      haslo: new FormControl('', [
       Validators.required,
@@ -51,13 +50,13 @@ export class AddWorkerComponent implements OnInit {
     ]),
      miasto: new FormControl('', [
       Validators.required,
-      Validators.minLength(1),
+      Validators.minLength(2),
       Validators.maxLength(100),
       capitalizedFirstLettersValidator()
     ]),
      kodPocztowy: new FormControl('', [
       Validators.required,
-      Validators.pattern('\d\d-\d\d\d')
+      Validators.pattern('[0-9][0-9]-[0-9][0-9][0-9]')
     ]),
      numerTelefonu: new FormControl('', [
       Validators.required,

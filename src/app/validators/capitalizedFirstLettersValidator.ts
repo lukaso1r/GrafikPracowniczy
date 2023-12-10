@@ -25,6 +25,6 @@ export function capitalizedFirstLettersValidator(): ValidatorFn {
       }
     }
 
-    return errorMessage ? { capitelizedFirstLettersError: errorMessage } : null;
+    return errorMessage ? { capitalizedFirstLettersError: errorMessage } : null;
   };
 }
