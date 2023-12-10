@@ -4,6 +4,7 @@ import { ElementRef } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
 
+
 @Component({
   selector: 'app-list-workers',
   templateUrl: './list-workers.component.html',
@@ -16,6 +17,7 @@ export class ListWorkersComponent implements OnInit{
   editWorkerForm = new FormGroup({imie: new FormControl(''), nazwisko: new FormControl(''), haslo: new FormControl('')});
   succesStateFlag: boolean = false;
 
+  workerData: any=[];
 
   constructor(private worker:WorkersService, private elementRef: ElementRef){
     this.worker.getAllWorkers().subscribe((allData)=>{
@@ -24,7 +26,7 @@ export class ListWorkersComponent implements OnInit{
     });
   }
 
-  workerData: any=[];
+
 
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.

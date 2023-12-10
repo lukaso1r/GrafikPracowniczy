@@ -1,14 +1,10 @@
 {
   "workers": [
     {
-      "id": 1,
-      "imie": "Andrzej",
-      "nazwisko": "Benek"
-    },
-    {
-      "id": 2,
-      "imie": "Kamil",
-      "nazwisko": "Starachowic"
+      "imie": "rafał",
+      "nazwisko": "Starachowic",
+      "haslo": null,
+      "id": 2
     },
     {
       "id": 4,
@@ -50,6 +46,12 @@
       "nazwisko": "Bielik",
       "haslo": "szybki",
       "id": 10
+    },
+    {
+      "imie": "test",
+      "nazwisko": "test",
+      "haslo": "test",
+      "id": 11
     }
   ],
   "managers": [
