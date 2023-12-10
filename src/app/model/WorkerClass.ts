@@ -23,12 +23,15 @@ export class WorkerClass{
   get KodPocztowy():string{return this.kodPocztowy;}
   get NumerTelefonu():number{return this.numerTelefonu;}
   get Email():string{return this.email;}
-  get StanowiskoId():number{if(!this.StanowiskoId){
-                              return null;
-                            }else{return this.stanowiskoId;}
+  get StanowiskoId():number | undefined{
+    return this.stanowiskoId;
   }
-  get DzialID():number{return this.dzialID;}
-  get Shift():ShiftClass{return this.shift;}
+  get DzialID():number | undefined{
+    return this.dzialID;
+  }
+  get Shift():ShiftClass | undefined{
+    return this.shift;
+  }
 
   set Id(id: number){this.id = id;};
   set Haslo(haslo:string){this.haslo = haslo};
