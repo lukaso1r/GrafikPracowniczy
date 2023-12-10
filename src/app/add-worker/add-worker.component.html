@@ -4,10 +4,116 @@
     Poprawnie dodano pracownika <button (click)="this.succesStateFlag = false">X</button>
   </div>
   <form class="form-column" [formGroup]="addWorker" (ngSubmit)="SaveData()">
-    <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="imie" formControlName="imie" placeholder="Wpisz imię" required>
-    <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="nazwisko" formControlName="nazwisko" placeholder="Wpisz nazwisko" required>
-    <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="haslo" formControlName="haslo" placeholder="Ustaw hasło" required>
-    <button type="submit" class="btn btn-primary mb-2">Dodaj pracownika</button>
+    <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="imie" formControlName="imie" placeholder="Wpisz imię" >
+    <div class="error" *ngIf="addWorker.controls['imie'].errors?.['minlength']">
+      Imię musi mieć więcej, niż 2 znaki.
+    </div>
+    <div class="error" *ngIf="addWorker.controls['imie'].errors?.['maxlength']">
+      maxlength
+    </div>
+    <div class="error" *ngIf="addWorker.controls['imie'].errors?.['required']">
+      required
+    </div>
+    <div class="error" *ngIf="addWorker.controls['imie'].errors?.['pattern']">
+      pattern
+    </div>
+
+    <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="nazwisko" formControlName="nazwisko" placeholder="Wpisz nazwisko" >
+    <div class="error" *ngIf="addWorker.controls['nazwisko'].errors?.['required']">
+      Imię musi mieć więcej, niż 2 znaki.
+    </div>
+    <div class="error" *ngIf="addWorker.controls['nazwisko'].errors?.['minlength']">
+      Imię musi mieć więcej, niż 2 znaki.
+    </div>
+    <div class="error" *ngIf="addWorker.controls['nazwisko'].errors?.['maxlength']">
+      Imię musi mieć więcej, niż 2 znaki.
+    </div>
+    <div class="error" *ngIf="addWorker.controls['nazwisko'].errors?.['']">
+      Imię musi mieć więcej, niż 2 znaki.
+    </div>
+
+    <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="email" formControlName="email" placeholder="Ustaw email" >
+    <div class="error" *ngIf="addWorker.controls['email'].errors?.['minlength']">
+      Imię musi mieć więcej, niż 2 znaki.
+    </div>
+    <div class="error" *ngIf="addWorker.controls['email'].errors?.['minlength']">
+      Imię musi mieć więcej, niż 2 znaki.
+    </div>
+
+    <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="haslo" formControlName="haslo" placeholder="Ustaw hasło" >
+    <div class="error" *ngIf="addWorker.controls['haslo'].errors?.['minlength']">
+      Imię musi mieć więcej, niż 2 znaki.
+    </div>
+    <div class="error" *ngIf="addWorker.controls['haslo'].errors?.['minlength']">
+      Imię musi mieć więcej, niż 2 znaki.
+    </div>
+    <div class="error" *ngIf="addWorker.controls['haslo'].errors?.['minlength']">
+      Imię musi mieć więcej, niż 2 znaki.
+    </div>
+
+    <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="ulica" formControlName="ulica" placeholder="Ustaw ulica" >
+    <div class="error" *ngIf="addWorker.controls['ulica'].errors?.['minlength']">
+      Imię musi mieć więcej, niż 2 znaki.
+    </div>
+    <div class="error" *ngIf="addWorker.controls['ulica'].errors?.['minlength']">
+      Imię musi mieć więcej, niż 2 znaki.
+    </div>
+    <div class="error" *ngIf="addWorker.controls['ulica'].errors?.['minlength']">
+      Imię musi mieć więcej, niż 2 znaki.
+    </div>
+    <div class="error" *ngIf="addWorker.controls['ulica'].errors?.['minlength']">
+      Imię musi mieć więcej, niż 2 znaki.
+    </div>
+
+    <input type="number" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="numerDomu" formControlName="numerDomu" placeholder="Ustaw numerDomu" >
+    <div class="error" *ngIf="addWorker.controls['numerDomu'].errors?.['minlength']">
+      Imię musi mieć więcej, niż 2 znaki.
+    </div>
+    <div class="error" *ngIf="addWorker.controls['numerDomu'].errors?.['minlength']">
+      Imię musi mieć więcej, niż 2 znaki.
+    </div>
+    <div class="error" *ngIf="addWorker.controls['numerDomu'].errors?.['minlength']">
+      Imię musi mieć więcej, niż 2 znaki.
+    </div>
+
+    <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="miasto" formControlName="miasto" placeholder="Ustaw miasto" >
+    <div class="error" *ngIf="addWorker.controls['miasto'].errors?.['minlength']">
+      Imię musi mieć więcej, niż 2 znaki.
+    </div>
+    <div class="error" *ngIf="addWorker.controls['miasto'].errors?.['minlength']">
+      Imię musi mieć więcej, niż 2 znaki.
+    </div>
+    <div class="error" *ngIf="addWorker.controls['miasto'].errors?.['minlength']">
+      Imię musi mieć więcej, niż 2 znaki.
+    </div>
+    <div class="error" *ngIf="addWorker.controls['miasto'].errors?.['minlength']">
+      Imię musi mieć więcej, niż 2 znaki.
+    </div>
+
+    <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="kodPocztowy" formControlName="kodPocztowy" placeholder="Ustaw kodPocztowy" >
+    <div class="error" *ngIf="addWorker.controls['kodPocztowy'].errors?.['minlength']">
+      Imię musi mieć więcej, niż 2 znaki.
+    </div>
+    <div class="error" *ngIf="addWorker.controls['kodPocztowy'].errors?.['minlength']">
+      Imię musi mieć więcej, niż 2 znaki.
+    </div>
+
+    <input type="number" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="numerTelefonu" formControlName="numerTelefonu" placeholder="Ustaw numerTelefonu" >
+    <div class="error" *ngIf="addWorker.controls['numerTelefonu'].errors?.['minlength']">
+      Imię musi mieć więcej, niż 2 znaki.
+    </div>
+    <div class="error" *ngIf="addWorker.controls['numerTelefonu'].errors?.['minlength']">
+      Imię musi mieć więcej, niż 2 znaki.
+    </div>
+    <div class="error" *ngIf="addWorker.controls['numerTelefonu'].errors?.['minlength']">
+      Imię musi mieć więcej, niż 2 znaki.
+    </div>
+
+
+
+    <input [disabled]="!addWorker.valid" type="submit" value="Dodaj pracownika" />
   </form>
+
+
 
 </div>

@@ -44,14 +44,28 @@
     {
       "imie": "Orzeł",
       "nazwisko": "Bielik",
-      "haslo": "szybki",
+      "haslo": "szybkość",
       "id": 10
     },
     {
       "imie": "test",
-      "nazwisko": "test",
-      "haslo": "test",
+      "nazwisko": "bliblib",
+      "haslo": "trzasło",
       "id": 11
+    },
+    {
+      "imie": "Lukasz",
+      "nazwisko": "Kaliszewicz",
+      "email": "lukaso1r@o2.pl",
+      "haslo": "haslo123",
+      "ulica": "Niewodnicka",
+      "numerDomu": "44",
+      "miasto": "Bialystok",
+      "kodPocztowy": "15-632",
+      "numerTelefonu": "147852369",
+      "stanowidkoId": "",
+      "dzialId": "2",
+      "id": 12
     }
   ],
   "managers": [

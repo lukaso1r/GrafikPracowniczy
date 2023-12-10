@@ -10,14 +10,11 @@ export class LoginPageComponent implements OnInit{
 
   selected: string;
 
-
   constructor(){
     this.selected = "worker";
   }
 
-
   ngOnInit(): void {
-
 
   }
 

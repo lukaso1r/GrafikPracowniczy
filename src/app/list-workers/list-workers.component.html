@@ -10,13 +10,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of workerData">
-        <th scope="row">{{item.id}}</th>
-        <td>{{item.imie}}</td>
-        <td>{{item.nazwisko}}</td>
+      <tr *ngFor="let item of workerObjectList">
+        <th scope="row">{{item.Id}}</th>
+        <td>{{item.Imie}}</td>
+        <td>{{item.Nazwisko}}</td>
         <td style="display: flex; flex-direction: row; align-items: center;">
-          <button style="display: flex; flex-direction: row; align-items: center; margin-right: 10px;" (click)="deleteWorker(item.id)" type="button">Usuń z listy <i style="display: flex; align-items: center; padding-left: 5px;" class="fi fi-rr-trash"></i></button>
-          <button type="button" (click)="editWorker(item.id)">Edytuj</button></td>
+          <button style="display: flex; flex-direction: row; align-items: center; margin-right: 10px;" (click)="deleteWorker(item.Id)" type="button">Usuń z listy <i style="display: flex; align-items: center; padding-left: 5px;" class="fi fi-rr-trash"></i></button>
+          <button type="button" (click)="editWorker(item.Id)">Edytuj</button></td>
       </tr>
     </tbody>
   </table>
@@ -39,6 +39,8 @@
 <div class="alert alert-success" role="alert" *ngIf="this.succesStateFlag == true">
   Poprawnie dodano pracownika <button (click)="this.succesStateFlag = false">X</button>
 </div>
+
+<button type="button" (click)="testFunction()">Test funkcji</button>
 
 
 <!-- [formGroup]="editWorker" (ngSubmit)="SaveData()" -->
