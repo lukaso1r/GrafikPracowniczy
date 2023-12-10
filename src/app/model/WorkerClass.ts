@@ -8,8 +8,8 @@ export class WorkerClass{
               private imie: string, private nazwisko: string,
               private ulica: string, private numerDomu: number, private miasto: string, private kodPocztowy: string,
               private numerTelefonu: number, private email: string,
-              private stanowiskoId: number, private dzialID: number,
-              private shift: ShiftClass){
+              private stanowiskoId?: number, private dzialID?: number,
+              private shift?: ShiftClass){
   }
 
 
@@ -23,7 +23,10 @@ export class WorkerClass{
   get KodPocztowy():string{return this.kodPocztowy;}
   get NumerTelefonu():number{return this.numerTelefonu;}
   get Email():string{return this.email;}
-  get StanowiskoId():number{return this.stanowiskoId;}
+  get StanowiskoId():number{if(!this.StanowiskoId){
+                              return null;
+                            }else{return this.stanowiskoId;}
+  }
   get DzialID():number{return this.dzialID;}
   get Shift():ShiftClass{return this.shift;}
 

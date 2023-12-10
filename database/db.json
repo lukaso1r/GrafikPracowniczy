@@ -66,6 +66,20 @@
       "stanowidkoId": "",
       "dzialId": "2",
       "id": 12
+    },
+    {
+      "imie": "Lukasz",
+      "nazwisko": "Kaliszewicz",
+      "email": "lukaso1r123@gmail.com",
+      "haslo": "Haslo123",
+      "ulica": "Niewodnicka",
+      "numerDomu": 44,
+      "miasto": "Białystok",
+      "kodPocztowy": "15-632",
+      "numerTelefonu": 123456789,
+      "stanowidkoId": "",
+      "dzialId": "",
+      "id": 13
     }
   ],
   "managers": [
