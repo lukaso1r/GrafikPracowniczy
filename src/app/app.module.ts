@@ -11,6 +11,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ListWorkersComponent } from './list-workers/list-workers.component';
 import { AddWorkerComponent } from './add-worker/add-worker.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { WorkerSearchPipe } from './pipes/worker-search.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,14 +21,16 @@ import { ReactiveFormsModule } from '@angular/forms';
     LoginWorkerComponent,
     LoginManagerComponent,
     ListWorkersComponent,
-    AddWorkerComponent
+    AddWorkerComponent,
+    WorkerSearchPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [
     provideClientHydration()

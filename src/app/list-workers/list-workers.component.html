@@ -1,5 +1,7 @@
 <div id="WorkersListDiv">
   <h3>Lista pracowników:</h3>
+  Wyszukaj po nazwisku: <input type="text" [(ngModel)]="searchValue" />
+  <br><br>
   <table class="table table-striped" style="width: 100%; margin: 0 auto;">
     <thead>
       <tr>
@@ -10,7 +12,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of workerObjectList">
+      <tr *ngFor="let item of workerObjectList | workerSearch: searchValue:'nazwisko';" >
         <th scope="row">{{item.Id}}</th>
         <td>{{item.Imie}}</td>
         <td>{{item.Nazwisko}}</td>

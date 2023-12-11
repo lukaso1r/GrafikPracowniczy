@@ -5,11 +5,10 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { WorkerClass } from '../model/WorkerClass';
 import { ShiftClass } from '../model/ShiftClass';
 
-
 @Component({
   selector: 'app-list-workers',
   templateUrl: './list-workers.component.html',
-  styleUrl: './list-workers.component.css'
+  styleUrl: './list-workers.component.css',
 })
 export class ListWorkersComponent implements OnInit{
 
@@ -18,6 +17,7 @@ export class ListWorkersComponent implements OnInit{
   editWorkerForm = new FormGroup({imie: new FormControl(''), nazwisko: new FormControl(''), haslo: new FormControl('')});
   succesStateFlag: boolean = false;
   workerObjectToChangeId: number = 0;
+  searchValue:string='';
 
   workerData: any=[];
   workerObjectList: WorkerClass[] = [];
@@ -25,7 +25,6 @@ export class ListWorkersComponent implements OnInit{
 
   constructor(private worker:WorkersService, private elementRef: ElementRef){
     this.initializeData();
-
   }
 
   async initializeData(): Promise<void> {
@@ -52,8 +51,6 @@ export class ListWorkersComponent implements OnInit{
       );
     });
   }
-
-
 
 
   ngOnInit(): void {
