@@ -26,13 +26,111 @@
   <div id="editWorkerPopUp" *ngIf="editWorkerPopUp==true">
     <h3>Edytuj pracownika</h3>
     <form class="form-column" [formGroup]="editWorkerForm" (ngSubmit)="SaveDataEditWorker()">
-      <label for="imie">Imię:</label>
-      <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="imie" formControlName="imie" required>
-      <label for="nazwisko">Nazwisko:</label>
-      <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="nazwisko" formControlName="nazwisko" required>
-      <label for="haslo">Haslo:</label>
-      <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="haslo" formControlName="haslo" required>
-      <button type="submit" class="btn btn-primary mb-2">Edytuj pracownika</button>
+      <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="imie" formControlName="imie" placeholder="Imię" >
+      <div class="error" *ngIf="editWorkerForm.controls['imie'].errors?.['minlength']">
+        Imię musi mieć więcej, niż 2 znaki.
+      </div>
+      <div class="error" *ngIf="editWorkerForm.controls['imie'].errors?.['maxlength']">
+        Imię nie może mieć więcej, niż 50 znaków.
+      </div>
+      <div class="error" *ngIf="editWorkerForm.controls['imie'].errors?.['required']">
+        Imię jest wymagane.
+      </div>
+      <div class="error" *ngIf="editWorkerForm.controls['imie'].errors?.['capitalizedFirstLettersError']">
+        {{editWorkerForm.controls['imie'].errors?.['capitalizedFirstLettersError']}}
+      </div>
+
+      <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="nazwisko" formControlName="nazwisko" placeholder="Nazwisko" >
+      <div class="error" *ngIf="editWorkerForm.controls['nazwisko'].errors?.['required']">
+        Nazwisko jest wymagane.
+      </div>
+      <div class="error" *ngIf="editWorkerForm.controls['nazwisko'].errors?.['minlength']">
+        Nazwisko musi mieć więcej, niż 2 znaki.
+      </div>
+      <div class="error" *ngIf="editWorkerForm.controls['nazwisko'].errors?.['maxlength']">
+        Nazwisko nie może mieć więcej, niż 100 znaków.
+      </div>
+      <div class="error" *ngIf="editWorkerForm.controls['nazwisko'].errors?.['capitalizedFirstLettersError']">
+        {{editWorkerForm.controls['nazwisko'].errors?.['capitalizedFirstLettersError']}}
+      </div>
+
+      <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="email" formControlName="email" placeholder="Adres Email" >
+      <div class="error" *ngIf="editWorkerForm.controls['email'].errors?.['required']">
+        Email jest wymagany.
+      </div>
+      <div class="error" *ngIf="editWorkerForm.controls['email'].errors?.['pattern']">
+        Email jest niepoprawny.
+      </div>
+
+      <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="haslo" formControlName="haslo" placeholder="Hasło" >
+      <div class="error" *ngIf="editWorkerForm.controls['haslo'].errors?.['required']">
+        Hasło jest wymagane.
+      </div>
+      <div class="error" *ngIf="editWorkerForm.controls['haslo'].errors?.['minlength']">
+        Hasło musi mieć więcej, niż 8 znaków.
+      </div>
+
+      <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="ulica" formControlName="ulica" placeholder="Nazwa Ulicy" >
+      <div class="error" *ngIf="editWorkerForm.controls['ulica'].errors?.['required']">
+        Ulica jest wymagana.
+      </div>
+      <div class="error" *ngIf="editWorkerForm.controls['ulica'].errors?.['minlength']">
+        Ulica musi mieć więcej, niż 2 znaki.
+      </div>
+      <div class="error" *ngIf="editWorkerForm.controls['ulica'].errors?.['maxlength']">
+        Ulica nie może mieć więcej, niż 100 znaków.
+      </div>
+      <div class="error" *ngIf="editWorkerForm.controls['ulica'].errors?.['capitalizedFirstLettersError']">
+        {{editWorkerForm.controls['ulica'].errors?.['capitalizedFirstLettersError']}}
+      </div>
+
+      <input type="number" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="numerDomu" formControlName="numerDomu" placeholder="Numer Domu" >
+      <div class="error" *ngIf="editWorkerForm.controls['numerDomu'].errors?.['required']">
+        Numer Domu jest wymagany.
+      </div>
+      <div class="error" *ngIf="editWorkerForm.controls['numerDomu'].errors?.['min']">
+        Number domu musi być większy niż 0.
+      </div>
+      <div class="error" *ngIf="editWorkerForm.controls['numerDomu'].errors?.['max']">
+        Number domu nie może być większy niż 9999.
+      </div>
+
+      <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="miasto" formControlName="miasto" placeholder="Miejscowość" >
+      <div class="error" *ngIf="editWorkerForm.controls['miasto'].errors?.['required']">
+        Miasto jest wymagane.
+      </div>
+      <div class="error" *ngIf="editWorkerForm.controls['miasto'].errors?.['minlength']">
+        Miasto musi mieć więcej, niż 2 znaki.
+      </div>
+      <div class="error" *ngIf="editWorkerForm.controls['miasto'].errors?.['maxlength']">
+        Miasto nie może mieć więcej, niż 100 znaków.
+      </div>
+      <div class="error" *ngIf="editWorkerForm.controls['miasto'].errors?.['capitalizedFirstLettersError']">
+        {{editWorkerForm.controls['miasto'].errors?.['capitalizedFirstLettersError']}}
+      </div>
+
+      <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="kodPocztowy" formControlName="kodPocztowy" placeholder="Kod Pocztowy" >
+      <div class="error" *ngIf="editWorkerForm.controls['kodPocztowy'].errors?.['required']">
+        Kod Pocztowy jest wymagany.
+      </div>
+      <div class="error" *ngIf="editWorkerForm.controls['kodPocztowy'].errors?.['pattern']">
+        Kod Pocztowy jest niepoprawny.
+      </div>
+
+      <input type="number" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="numerTelefonu" formControlName="numerTelefonu" placeholder="Numer Telefonu" >
+      <div class="error" *ngIf="editWorkerForm.controls['numerTelefonu'].errors?.['required']">
+        Numer Telefonu jest wymagany.
+      </div>
+      <div class="error" *ngIf="editWorkerForm.controls['numerTelefonu'].errors?.['min']">
+        Numer telefonu musi składać się z 9 cyfr.
+      </div>
+      <div class="error" *ngIf="editWorkerForm.controls['numerTelefonu'].errors?.['max']">
+        Numer telefonu musi składać się z 9 cyfr.
+      </div>
+
+
+
+      <input [disabled]="!editWorkerForm.valid" type="submit" value="Zapisz" />
     </form>
     <button (click)="stopEdit()">Anuluj</button>
   </div>

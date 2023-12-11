@@ -1,9 +1,11 @@
 import { Component, OnInit, numberAttribute } from '@angular/core';
 import {WorkersService} from '../workers.service';
 import { ElementRef } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { WorkerClass } from '../model/WorkerClass';
 import { ShiftClass } from '../model/ShiftClass';
+import {capitalizedFirstLettersValidator} from '../validators/capitalizedFirstLettersValidator';
+
 
 @Component({
   selector: 'app-list-workers',
@@ -14,7 +16,19 @@ export class ListWorkersComponent implements OnInit{
 
   foundWorkerToEdit: any;
   editWorkerPopUp: boolean = false;
-  editWorkerForm = new FormGroup({imie: new FormControl(''), nazwisko: new FormControl(''), haslo: new FormControl('')});
+  editWorkerForm = new FormGroup({
+    imie: new FormControl(''),
+    nazwisko: new FormControl(''),
+     email: new FormControl(''),
+     haslo: new FormControl(''),
+     ulica: new FormControl(''),
+     numerDomu: new FormControl(''),
+     miasto: new FormControl(''),
+     kodPocztowy: new FormControl(''),
+     numerTelefonu: new FormControl(''),
+     stanowidkoId: new FormControl(''),
+     dzialId: new FormControl('')
+  });
   succesStateFlag: boolean = false;
   workerObjectToChangeId: number = 0;
   searchValue:string='';
@@ -71,7 +85,62 @@ export class ListWorkersComponent implements OnInit{
 
   editWorker(workerToChangeId: number){
     this.foundWorkerToEdit = this.workerData.find((w: { id: number; }) => w.id === workerToChangeId);
-    this.editWorkerForm = new FormGroup({imie: new FormControl(this.foundWorkerToEdit.imie), nazwisko: new FormControl(this.foundWorkerToEdit.nazwisko), haslo: new FormControl(this.foundWorkerToEdit.haslo)});
+    this.editWorkerForm = new FormGroup({
+      imie: new FormControl(this.foundWorkerToEdit.imie, [
+        Validators.required,
+        Validators.minLength(2),
+        Validators.maxLength(50),
+        capitalizedFirstLettersValidator()
+      ]),
+      nazwisko: new FormControl(this.foundWorkerToEdit.nazwisko, [
+        Validators.required,
+        Validators.minLength(2),
+        Validators.maxLength(100),
+        capitalizedFirstLettersValidator()
+      ]),
+       email: new FormControl(this.foundWorkerToEdit.email, [
+        Validators.required,
+        Validators.pattern('[A-Za-z0-9]+@[A-Za-z0-9]+\.[A-Za-z0-9]+'),
+      ]),
+       haslo: new FormControl(this.foundWorkerToEdit.haslo, [
+        Validators.required,
+        Validators.minLength(8),
+      ]),
+       ulica: new FormControl(this.foundWorkerToEdit.ulica, [
+        Validators.required,
+        Validators.minLength(2),
+        Validators.maxLength(100),
+        capitalizedFirstLettersValidator()
+      ]),
+       numerDomu: new FormControl(this.foundWorkerToEdit.numerDomu, [
+        Validators.required,
+        Validators.min(0),
+        Validators.max(9999)
+      ]),
+       miasto: new FormControl(this.foundWorkerToEdit.miasto, [
+        Validators.required,
+        Validators.minLength(2),
+        Validators.maxLength(100),
+        capitalizedFirstLettersValidator()
+      ]),
+       kodPocztowy: new FormControl(this.foundWorkerToEdit.kodPocztowy, [
+        Validators.required,
+        Validators.pattern('[0-9][0-9]-[0-9][0-9][0-9]')
+      ]),
+       numerTelefonu: new FormControl(this.foundWorkerToEdit.numerTelefonu, [
+        Validators.required,
+        Validators.min(100000000),
+        Validators.max(999999999)
+      ]),
+       stanowidkoId: new FormControl(this.foundWorkerToEdit.stanowiskoId, [
+        Validators.min(0),
+        Validators.max(9999),
+      ]),
+       dzialId: new FormControl(this.foundWorkerToEdit.dzialId, [
+        Validators.min(0),
+        Validators.max(9999),
+      ])
+    });
     this.editWorkerPopUp = true;
     console.log(this.foundWorkerToEdit.id);
     this.workerObjectToChangeId = workerToChangeId;
