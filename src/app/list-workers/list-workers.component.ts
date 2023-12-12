@@ -159,6 +159,7 @@ export class ListWorkersComponent implements OnInit{
     this.workerObjectList[workerObjectToChange].Imie = this.editWorkerForm.value.imie as string;
     this.workerObjectList[workerObjectToChange].Nazwisko = this.editWorkerForm.value.nazwisko as string;
     this.workerObjectList[workerObjectToChange].Haslo = this.editWorkerForm.value.haslo as string;
+
     //koniec edycji w obiekcie
 
     this.stopEdit();

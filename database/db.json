@@ -1,20 +1,45 @@
 {
   "workers": [
     {
-      "imie": "Kuba",
+      "imie": "Jagoda",
       "nazwisko": "Starachowic",
-      "haslo": null,
+      "email": "email@wp.pl",
+      "haslo": "haslo123",
+      "ulica": "Lipowa",
+      "numerDomu": 2,
+      "miasto": "Bialystok",
+      "kodPocztowy": "11-111",
+      "numerTelefonu": 125488523,
+      "stanowidkoId": null,
+      "dzialId": null,
       "id": 2
     },
     {
-      "id": 4,
       "imie": "Jarek",
-      "nazwisko": "Pasza"
+      "nazwisko": "Pasza",
+      "email": "email@wp.pl",
+      "haslo": "haslo123",
+      "ulica": "Lipowa",
+      "numerDomu": 2,
+      "miasto": "Bialystok",
+      "kodPocztowy": "11-111",
+      "numerTelefonu": 125488523,
+      "stanowidkoId": null,
+      "dzialId": null,
+      "id": 4
     },
     {
-      "imie": "OlaF",
+      "imie": "Olaf",
       "nazwisko": "Topór",
-      "haslo": "groźny",
+      "email": "email@wp.pl",
+      "haslo": "haslo123",
+      "ulica": "Lipowa",
+      "numerDomu": 2,
+      "miasto": "Bialystok",
+      "kodPocztowy": "11-111",
+      "numerTelefonu": 125488523,
+      "stanowidkoId": null,
+      "dzialId": null,
       "id": 5
     },
     {
