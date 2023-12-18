@@ -46,22 +46,12 @@ export class ShiftsViewComponent implements OnInit {
     }
   }
 
-  addShift(){
-
-  }
 
   SaveData(){
     console.log(this.addShiftForm.value);
-    // let selectedWorkers: WorkerClass[] = this.addShiftForm.value.workers as unknown as WorkerClass[];
-
-
-    // this.worker.saveWorkerData(this.addWorker.value).subscribe((result)=>{
-    // console.log(result);
-    // this.succesStateFlag = true;
-    // this.addWorker.reset({});
-    // });
-    // this.shiftList.push(new ShiftClass(this.testId, this.addShiftForm.value.date as unknown as Date, this.addShiftForm.value.workers as unknown as WorkerClass[]));
-    // this.testId++;
+    this.shiftList.push(new ShiftClass(this.testId, this.addShiftForm.value.date as unknown as Date, this.addShiftForm.value.workers as unknown as WorkerClass[]));
+    this.addShiftForm.reset();
+    this.testId++;
 
   }
 

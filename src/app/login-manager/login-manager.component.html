@@ -21,23 +21,7 @@
   <div id="managerPanelOutput">
     <app-list-workers id="showWorkerListStatus" *ngIf='outPutActiveList[0] == true'></app-list-workers>
     <div id="showAddWorkerStatus" *ngIf='outPutActiveList[1] == true'><app-add-worker></app-add-worker></div>
-    <div id="showCalencdarStatus" *ngIf='outPutActiveList[2] == true'>
-      <!-- docelowo ma otrzymać tutaj nowy komponent któremu wyśle się listę pracowników i inne -->
-
-      <h1>Grafik test</h1>
-
-      <app-shifts-view></app-shifts-view>
-
-      <form class="form-column" [formGroup]="addShift" (ngSubmit)="loginAsManagerFunc()">
-        <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="id" formControlName="id" placeholder="Wpisz imię" required>
-        <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="date" formControlName="date" placeholder="Wpisz nazwisko" required>
-        <input type="password" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="worker" formControlName="worker" placeholder="Wpisz id pracownika" required>
-        <button type="submit" class="btn btn-primary mb-2">Zaloguj się</button>
-      </form>
-
-
-
-    </div>
+    <div id="showCalencdarStatus" *ngIf='outPutActiveList[2] == true'><app-shifts-view></app-shifts-view></div>
 
 
   </div>
