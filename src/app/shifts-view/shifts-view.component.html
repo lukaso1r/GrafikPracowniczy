@@ -1,9 +1,7 @@
-<button type="button" (click)="testFunction()">Test funkcji</button>
-
 <div id="dispalyAllShifts">
 
   <form id="addShiftForm" class="form-column" [formGroup]="addShiftForm" (ngSubmit)="SaveData()">
-    <input type="date" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="date" formControlName="date" placeholder="date" >
+    <input type="datetime-local" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="date" formControlName="date" placeholder="date" [min]="getCurrentDateTime()">
     <select multiple class="form-control" formControlName="workers">
       <option *ngFor="let worker of workerObjectList" [value]="worker">{{ worker.Imie }} {{ worker.Nazwisko }}</option>
     </select>

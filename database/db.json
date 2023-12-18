@@ -1,20 +1,6 @@
 {
   "workers": [
     {
-      "imie": "Jarek",
-      "nazwisko": "Pasza1",
-      "email": "email@wp.pll",
-      "haslo": "haslo1234",
-      "ulica": "Lipowaa",
-      "numerDomu": 22,
-      "miasto": "Bialystokk",
-      "kodPocztowy": "11-112",
-      "numerTelefonu": 125488524,
-      "stanowidkoId": null,
-      "dzialId": null,
-      "id": 4
-    },
-    {
       "imie": "Olaf",
       "nazwisko": "Topór",
       "email": "email@wp.pl",
@@ -43,18 +29,32 @@
       "id": 6
     },
     {
-      "imie": "user",
-      "nazwisko": "",
-      "email": "",
-      "haslo": "",
-      "ulica": "",
-      "numerDomu": 0,
-      "miasto": "",
-      "kodPocztowy": "14-123",
-      "numerTelefonu": 0,
-      "stanowidkoId": null,
+      "imie": "Rafał",
+      "nazwisko": "Niedźwiedzki",
+      "email": "rafal@gmail.com",
+      "haslo": "Haslo123",
+      "ulica": "Jemeńska",
+      "numerDomu": 12,
+      "miasto": "Kraków",
+      "kodPocztowy": "13-456",
+      "numerTelefonu": 895741232,
+      "stanowidkoId": "",
       "dzialId": "",
       "id": 7
+    },
+    {
+      "imie": "Kamil",
+      "nazwisko": "Bruszewski",
+      "email": "kamcz@gniezno.pl",
+      "haslo": "jakies123",
+      "ulica": "Sprytna",
+      "numerDomu": 99,
+      "miasto": "Kałuża",
+      "kodPocztowy": "41-963",
+      "numerTelefonu": 857412369,
+      "stanowidkoId": "",
+      "dzialId": "",
+      "id": 8
     }
   ],
   "managers": [
@@ -71,6 +71,13 @@
       "nazwisko": "",
       "stanowisko": "",
       "haslo": ""
+    }
+  ],
+  "shifts":[
+    {
+      "id": 1,
+      "date": "",
+      "WorkerClass": []
     }
   ]
 }

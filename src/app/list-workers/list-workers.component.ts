@@ -3,7 +3,6 @@ import {WorkersService} from '../workers.service';
 import { ElementRef } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { WorkerClass } from '../model/WorkerClass';
-import { ShiftClass } from '../model/ShiftClass';
 import {capitalizedFirstLettersValidator} from '../validators/capitalizedFirstLettersValidator';
 import { DaneService } from '../dane.service';
 
@@ -39,11 +38,6 @@ export class ListWorkersComponent implements OnInit{
 
   workerData: any=[];
   workerObjectList: WorkerClass[] = [];
-  testDate: Date = new Date(2023, 0, 1);
-
-  shiftList: ShiftClass[] = [];
-  message: string = "";
-
 
   constructor(private worker:WorkersService, private elementRef: ElementRef, private data: DaneService){
     this.initializeData();
@@ -75,13 +69,9 @@ export class ListWorkersComponent implements OnInit{
     this.newWorkerObjectList()
   }
 
-
   ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
-    this.data.currentMessage.subscribe(message => this.message = message);
-    this.data.currentshiftList.subscribe(shiftList => this.shiftList = shiftList);
     this.data.currentWorkerObjectList.subscribe(workerObjectList => this.workerObjectList = workerObjectList);
+    this.newWorkerObjectList()
   }
 
   deleteWorker(workerId: number){
@@ -193,25 +183,8 @@ export class ListWorkersComponent implements OnInit{
     this.workerObjectToChangeId = 0;
   }
 
-  newMessage(){
-    this.data.changeMessage("hello from listWorkers")
-  }
-
-  newShiftList(){
-    this.data.changeShiftList(this.shiftList);
-  }
-
   newWorkerObjectList(){
     this.data.changeWorkerObjectList(this.workerObjectList);
   }
-
-  //test
-  testFunction(){
-    this.shiftList.push(new ShiftClass(1, this.testDate, this.workerObjectList));
-    console.log(this.shiftList);
-    this.newMessage();
-    this.newShiftList();
-  }
-
 
 }

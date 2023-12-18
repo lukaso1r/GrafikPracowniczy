@@ -4,6 +4,7 @@ import { ShiftClass } from '../model/ShiftClass';
 import { WorkerClass } from '../model/WorkerClass';
 import { FormGroup, FormControl } from '@angular/forms';
 import { DatePipe } from '@angular/common';
+import { WorkersService } from '../workers.service';
 
 
 @Component({
@@ -14,8 +15,8 @@ import { DatePipe } from '@angular/common';
 })
 export class ShiftsViewComponent implements OnInit {
 
-  message: string;
   shiftList: ShiftClass[] = [];
+  shiftListTest: any = [];
   workerObjectList: WorkerClass[] = [];
   testDate: Date = new Date(2023, 0, 1);
 
@@ -25,14 +26,39 @@ export class ShiftsViewComponent implements OnInit {
 
   addShiftForm = new FormGroup({date: new FormControl(''), workers: new FormControl('')});
 
-  constructor(private data: DaneService, private datePipe: DatePipe){
-    this.message = '';
+  constructor(private data: DaneService, private datePipe: DatePipe, private worker:WorkersService){
+    this.initializeData();
   }
 
   ngOnInit(): void {
-    this.data.currentMessage.subscribe(message => this.message = message);
     this.data.currentshiftList.subscribe(shiftList => this.shiftList = shiftList);
     this.data.currentWorkerObjectList.subscribe(workerObjectList => this.workerObjectList = workerObjectList);
+  }
+
+  async initializeData(): Promise<void> {
+    const allData = await this.worker.getAllShifts().toPromise();
+    console.log("import zmian");
+    console.log(allData);
+    this.shiftListTest = allData;
+
+    // Przetwórz dane i utwórz obiekty WorkerClass
+    // this.workerObjectList = this.workerData.map((workerDataItem: any) => {
+    //   return new WorkerClass(
+    //     workerDataItem.id,
+    //     workerDataItem.haslo,
+    //     workerDataItem.imie,
+    //     workerDataItem.nazwisko,
+    //     workerDataItem.ulica,
+    //     workerDataItem.numerDomu,
+    //     workerDataItem.miasto,
+    //     workerDataItem.kodPocztowy,
+    //     workerDataItem.numerTelefonu,
+    //     workerDataItem.email,
+    //     workerDataItem.stanowiskoId,
+    //     workerDataItem.dzialID
+    //   );
+    // });
+    // this.newWorkerObjectList()
   }
 
 
@@ -44,6 +70,17 @@ export class ShiftsViewComponent implements OnInit {
         console.log("delete shift");
         console.log(this.shiftList);
     }
+  }
+
+  getCurrentDateTime(): string {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = (now.getMonth() + 1).toString().padStart(2, '0');
+    const day = now.getDate().toString().padStart(2, '0');
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+
+    return `${year}-${month}-${day}T${hours}:${minutes}`;
   }
 
 
@@ -67,14 +104,6 @@ export class ShiftsViewComponent implements OnInit {
   }
 
 
-  //test
-  testFunction(){
-    // this.shiftList.push(new ShiftClass(1, this.testDate, this.workerObjectList));
-    // console.log(this.shiftList);
-    console.log(this.shiftList);
-    console.log(this.workerObjectList);
-    this.addShiftToList();
-    this.newShiftList();
-  }
+
 
 }
