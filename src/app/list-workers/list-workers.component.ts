@@ -14,27 +14,32 @@ import {capitalizedFirstLettersValidator} from '../validators/capitalizedFirstLe
 })
 export class ListWorkersComponent implements OnInit{
 
-  foundWorkerToEdit: any;
-  editWorkerPopUp: boolean = false;
-  editWorkerForm = new FormGroup({
-    imie: new FormControl(''),
-    nazwisko: new FormControl(''),
-     email: new FormControl(''),
-     haslo: new FormControl(''),
-     ulica: new FormControl(''),
-     numerDomu: new FormControl(''),
-     miasto: new FormControl(''),
-     kodPocztowy: new FormControl(''),
-     numerTelefonu: new FormControl(''),
-     stanowidkoId: new FormControl(''),
-     dzialId: new FormControl('')
-  });
+    foundWorkerToEdit: any;
+    workerObjectToChange: any;
+    editWorkerPopUp: boolean = false;
+
+    editWorkerForm = new FormGroup({
+      imie: new FormControl(''),
+      nazwisko: new FormControl(''),
+      email: new FormControl(''),
+      haslo: new FormControl(''),
+      ulica: new FormControl(''),
+      numerDomu: new FormControl(''),
+      miasto: new FormControl(''),
+      kodPocztowy: new FormControl(''),
+      numerTelefonu: new FormControl(''),
+      stanowidkoId: new FormControl(''),
+      dzialId: new FormControl('')
+    });
+
   succesStateFlag: boolean = false;
   workerObjectToChangeId: number = 0;
   searchValue:string='';
 
   workerData: any=[];
   workerObjectList: WorkerClass[] = [];
+  testDate: Date = new Date(2023, 0, 1);
+  shiftList: ShiftClass[] = [];
 
 
   constructor(private worker:WorkersService, private elementRef: ElementRef){
@@ -60,8 +65,7 @@ export class ListWorkersComponent implements OnInit{
         workerDataItem.numerTelefonu,
         workerDataItem.email,
         workerDataItem.stanowiskoId,
-        workerDataItem.dzialID,
-        new ShiftClass(69)
+        workerDataItem.dzialID
       );
     });
   }
@@ -71,72 +75,78 @@ export class ListWorkersComponent implements OnInit{
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
 
+
   }
 
   deleteWorker(workerId: number){
     let foundWorker = this.workerData.find((w: { id: number; }) => w.id === workerId);
     alert("usnięto: " + foundWorker.imie + " "+ foundWorker.nazwisko + " o id: " + workerId);
     console.log(this.workerData);
+    let index = this.workerObjectList.findIndex((worker: WorkerClass) => worker.Id === workerId);
+    if (index !== -1) {
+        this.workerObjectList.splice(index, 1);
+    }
     this.worker.deleteWorker(workerId).subscribe((result) => {
       console.log(result);
-      this.ngOnInit();
     });
   }
 
   editWorker(workerToChangeId: number){
     this.foundWorkerToEdit = this.workerData.find((w: { id: number; }) => w.id === workerToChangeId);
+    this.workerObjectToChange = this.workerObjectList.find((worker: WorkerClass) => worker.Id === workerToChangeId);
+
     this.editWorkerForm = new FormGroup({
-      imie: new FormControl(this.foundWorkerToEdit.imie, [
+      imie: new FormControl(this.workerObjectToChange.Imie, [
         Validators.required,
         Validators.minLength(2),
         Validators.maxLength(50),
         capitalizedFirstLettersValidator()
       ]),
-      nazwisko: new FormControl(this.foundWorkerToEdit.nazwisko, [
+      nazwisko: new FormControl(this.workerObjectToChange.Nazwisko, [
         Validators.required,
         Validators.minLength(2),
         Validators.maxLength(100),
         capitalizedFirstLettersValidator()
       ]),
-       email: new FormControl(this.foundWorkerToEdit.email, [
+       email: new FormControl(this.workerObjectToChange.Email, [
         Validators.required,
         Validators.pattern('[A-Za-z0-9]+@[A-Za-z0-9]+\.[A-Za-z0-9]+'),
       ]),
-       haslo: new FormControl(this.foundWorkerToEdit.haslo, [
+       haslo: new FormControl(this.workerObjectToChange.Haslo, [
         Validators.required,
         Validators.minLength(8),
       ]),
-       ulica: new FormControl(this.foundWorkerToEdit.ulica, [
+       ulica: new FormControl(this.workerObjectToChange.Ulica, [
         Validators.required,
         Validators.minLength(2),
         Validators.maxLength(100),
         capitalizedFirstLettersValidator()
       ]),
-       numerDomu: new FormControl(this.foundWorkerToEdit.numerDomu, [
+       numerDomu: new FormControl(this.workerObjectToChange.NumerDomu, [
         Validators.required,
         Validators.min(0),
         Validators.max(9999)
       ]),
-       miasto: new FormControl(this.foundWorkerToEdit.miasto, [
+       miasto: new FormControl(this.workerObjectToChange.Miasto, [
         Validators.required,
         Validators.minLength(2),
         Validators.maxLength(100),
         capitalizedFirstLettersValidator()
       ]),
-       kodPocztowy: new FormControl(this.foundWorkerToEdit.kodPocztowy, [
+       kodPocztowy: new FormControl(this.workerObjectToChange.KodPocztowy, [
         Validators.required,
         Validators.pattern('[0-9][0-9]-[0-9][0-9][0-9]')
       ]),
-       numerTelefonu: new FormControl(this.foundWorkerToEdit.numerTelefonu, [
+       numerTelefonu: new FormControl(this.workerObjectToChange.NumerTelefonu, [
         Validators.required,
         Validators.min(100000000),
         Validators.max(999999999)
       ]),
-       stanowidkoId: new FormControl(this.foundWorkerToEdit.stanowiskoId, [
+       stanowidkoId: new FormControl(this.workerObjectToChange.StanowiskoId, [
         Validators.min(0),
         Validators.max(9999),
       ]),
-       dzialId: new FormControl(this.foundWorkerToEdit.dzialId, [
+       dzialId: new FormControl(this.workerObjectToChange.DzialId, [
         Validators.min(0),
         Validators.max(9999),
       ])
@@ -147,24 +157,25 @@ export class ListWorkersComponent implements OnInit{
   }
 
   SaveDataEditWorker(){
-    //zmiana w json server
     this.worker.updateWorkerData(this.foundWorkerToEdit.id, this.editWorkerForm.value).subscribe(
       (result)=>{
         console.log(result);
       }
     )
-    //zmiana obiektu
+
     let workerObjectToChange = this.workerObjectList.findIndex(worker => worker.Id === this.workerObjectToChangeId);
-    //workers[indexWorkerBartek].nazwisko = 'Ruch'; tu ma to być z formularza this.editWorkerForm.value
     this.workerObjectList[workerObjectToChange].Imie = this.editWorkerForm.value.imie as string;
     this.workerObjectList[workerObjectToChange].Nazwisko = this.editWorkerForm.value.nazwisko as string;
+    this.workerObjectList[workerObjectToChange].Email = this.editWorkerForm.value.email as string;
     this.workerObjectList[workerObjectToChange].Haslo = this.editWorkerForm.value.haslo as string;
-
-    //koniec edycji w obiekcie
+    this.workerObjectList[workerObjectToChange].Ulica = this.editWorkerForm.value.ulica as string;
+    this.workerObjectList[workerObjectToChange].NumerDomu = this.editWorkerForm.value.numerDomu as unknown as number;
+    this.workerObjectList[workerObjectToChange].Miasto = this.editWorkerForm.value.miasto as string;
+    this.workerObjectList[workerObjectToChange].KodPocztowy = this.editWorkerForm.value.kodPocztowy as string;
+    this.workerObjectList[workerObjectToChange].NumerTelefonu = this.editWorkerForm.value.numerTelefonu as unknown as number;
 
     this.stopEdit();
     this.succesStateFlag = true;
-    this.ngOnInit();
   }
 
   stopEdit(){
@@ -175,8 +186,8 @@ export class ListWorkersComponent implements OnInit{
 
   //test
   testFunction(){
-    console.log(this.editWorkerForm.value);
-    console.log(this.editWorkerForm.value.haslo)
+    this.shiftList.push(new ShiftClass(1, this.testDate, this.workerObjectList));
+    console.log(this.shiftList);
   }
 
 

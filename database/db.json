@@ -1,29 +1,15 @@
 {
   "workers": [
     {
-      "imie": "Jagoda",
-      "nazwisko": "Starachowic",
-      "email": "email@wp.pl",
-      "haslo": "haslo123",
-      "ulica": "Lipowa",
-      "numerDomu": 2,
-      "miasto": "Bialystok",
-      "kodPocztowy": "11-111",
-      "numerTelefonu": 125488523,
-      "stanowidkoId": null,
-      "dzialId": null,
-      "id": 2
-    },
-    {
       "imie": "Jarek",
-      "nazwisko": "Pasza",
-      "email": "email@wp.pl",
-      "haslo": "haslo123",
-      "ulica": "Lipowa",
-      "numerDomu": 2,
-      "miasto": "Bialystok",
-      "kodPocztowy": "11-111",
-      "numerTelefonu": 125488523,
+      "nazwisko": "Pasza1",
+      "email": "email@wp.pll",
+      "haslo": "haslo1234",
+      "ulica": "Lipowaa",
+      "numerDomu": 22,
+      "miasto": "Bialystokk",
+      "kodPocztowy": "11-112",
+      "numerTelefonu": 125488524,
       "stanowidkoId": null,
       "dzialId": null,
       "id": 4
@@ -43,68 +29,32 @@
       "id": 5
     },
     {
-      "imie": "Kasia",
-      "nazwisko": "Małecka",
-      "haslo": "Kwiatek",
+      "imie": "Karolina",
+      "nazwisko": "Malinowska",
+      "email": "alicja@wp.pl",
+      "haslo": "haslo123",
+      "ulica": "Szybka",
+      "numerDomu": 12,
+      "miasto": "Łomża",
+      "kodPocztowy": "14-123",
+      "numerTelefonu": 759604819,
+      "stanowidkoId": null,
+      "dzialId": "",
       "id": 6
     },
     {
-      "imie": "Radosław",
-      "nazwisko": "Miły",
-      "haslo": "haslo123",
-      "id": 7
-    },
-    {
-      "imie": "Jerzy",
-      "nazwisko": "Daniell",
-      "haslo": "samochodzik",
-      "id": 8
-    },
-    {
-      "imie": "Jerzy",
-      "nazwisko": "jerz",
-      "haslo": "orotografia",
-      "id": 9
-    },
-    {
-      "imie": "Orzeł",
-      "nazwisko": "Bielik",
-      "haslo": "szybkość",
-      "id": 10
-    },
-    {
-      "imie": "test",
-      "nazwisko": "bliblib",
-      "haslo": "trzasło",
-      "id": 11
-    },
-    {
-      "imie": "Lukasz",
-      "nazwisko": "Kaliszewicz",
-      "email": "lukaso1r@o2.pl",
-      "haslo": "haslo123",
-      "ulica": "Niewodnicka",
-      "numerDomu": "44",
-      "miasto": "Bialystok",
-      "kodPocztowy": "15-632",
-      "numerTelefonu": "147852369",
-      "stanowidkoId": "",
-      "dzialId": "2",
-      "id": 12
-    },
-    {
-      "imie": "Lukasz",
-      "nazwisko": "Kaliszewicz",
-      "email": "lukaso1r123@gmail.com",
-      "haslo": "Haslo123",
-      "ulica": "Niewodnicka",
-      "numerDomu": 44,
-      "miasto": "Białystok",
-      "kodPocztowy": "15-632",
-      "numerTelefonu": 123456789,
-      "stanowidkoId": "",
+      "imie": "user",
+      "nazwisko": "",
+      "email": "",
+      "haslo": "",
+      "ulica": "",
+      "numerDomu": 0,
+      "miasto": "",
+      "kodPocztowy": "14-123",
+      "numerTelefonu": 0,
+      "stanowidkoId": null,
       "dzialId": "",
-      "id": 13
+      "id": 7
     }
   ],
   "managers": [

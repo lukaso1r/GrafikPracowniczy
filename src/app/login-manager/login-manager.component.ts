@@ -9,7 +9,7 @@ import {WorkersService} from '../workers.service';
 })
 export class LoginManagerComponent implements OnInit{
 
-  loginStatus: boolean;
+  loginStatus: boolean = false;;
   showWorkerListStatus: boolean;
   showAddWorkerStatus: boolean;
   showCalencdarStatus: boolean;
@@ -18,7 +18,7 @@ export class LoginManagerComponent implements OnInit{
 
   constructor(private manager:WorkersService){
 
-    this.loginStatus = false;
+
     this.showWorkerListStatus = false;
     this.showAddWorkerStatus = false;
     this.showCalencdarStatus = false;
@@ -31,6 +31,7 @@ export class LoginManagerComponent implements OnInit{
   }
 
   loginAsManager = new FormGroup({imie: new FormControl(''), nazwisko: new FormControl(''), haslo: new FormControl('')});
+  addShift = new FormGroup({id: new FormControl(''), date: new FormControl(''), worker: new FormControl('')});
   managersData: any=[];
   loggedManagerInfo: string = "";
 
@@ -38,7 +39,7 @@ export class LoginManagerComponent implements OnInit{
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
 
-    this.loginStatus = false;
+
     this.showWorkerListStatus = false;
     this.showAddWorkerStatus = false;
     this.showCalencdarStatus = false;

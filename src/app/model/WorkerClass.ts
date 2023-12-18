@@ -3,6 +3,7 @@ import { ShiftClass } from "./ShiftClass";
 
 
 export class WorkerClass{
+  
 
   constructor(private id: number, private haslo: string,
               private imie: string, private nazwisko: string,
@@ -35,6 +36,7 @@ export class WorkerClass{
 
   set Id(id: number){this.id = id;};
   set Haslo(haslo:string){this.haslo = haslo};
+  set Email(email:string){this.email = email};
   set NumerDomu(numerDomu: number){this.numerDomu = numerDomu;}
   set NumerTelefonu(numerTelefonu: number){this.numerTelefonu = numerTelefonu;}
   set StanowiskoId(stanowiskoId: number){this.stanowiskoId = stanowiskoId;}
