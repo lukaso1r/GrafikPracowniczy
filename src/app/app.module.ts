@@ -13,6 +13,8 @@ import { AddWorkerComponent } from './add-worker/add-worker.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { WorkerSearchPipe } from './pipes/worker-search.pipe';
 import { FormsModule } from '@angular/forms';
+import { ShiftsViewComponent } from './shifts-view/shifts-view.component';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { FormsModule } from '@angular/forms';
     LoginManagerComponent,
     ListWorkersComponent,
     AddWorkerComponent,
-    WorkerSearchPipe
+    WorkerSearchPipe,
+    ShiftsViewComponent
   ],
   imports: [
     BrowserModule,

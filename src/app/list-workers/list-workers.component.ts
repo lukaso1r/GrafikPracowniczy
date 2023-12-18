@@ -5,6 +5,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { WorkerClass } from '../model/WorkerClass';
 import { ShiftClass } from '../model/ShiftClass';
 import {capitalizedFirstLettersValidator} from '../validators/capitalizedFirstLettersValidator';
+import { DaneService } from '../dane.service';
 
 
 @Component({
@@ -39,14 +40,17 @@ export class ListWorkersComponent implements OnInit{
   workerData: any=[];
   workerObjectList: WorkerClass[] = [];
   testDate: Date = new Date(2023, 0, 1);
+
   shiftList: ShiftClass[] = [];
+  message: string = "";
 
 
-  constructor(private worker:WorkersService, private elementRef: ElementRef){
+  constructor(private worker:WorkersService, private elementRef: ElementRef, private data: DaneService){
     this.initializeData();
   }
 
   async initializeData(): Promise<void> {
+    this.data.currentWorkerObjectList.subscribe(workerObjectList => this.workerObjectList = workerObjectList);
     const allData = await this.worker.getAllWorkers().toPromise();
     console.log(allData);
     this.workerData = allData;
@@ -68,14 +72,16 @@ export class ListWorkersComponent implements OnInit{
         workerDataItem.dzialID
       );
     });
+    this.newWorkerObjectList()
   }
 
 
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
-
-
+    this.data.currentMessage.subscribe(message => this.message = message);
+    this.data.currentshiftList.subscribe(shiftList => this.shiftList = shiftList);
+    this.data.currentWorkerObjectList.subscribe(workerObjectList => this.workerObjectList = workerObjectList);
   }
 
   deleteWorker(workerId: number){
@@ -89,6 +95,7 @@ export class ListWorkersComponent implements OnInit{
     this.worker.deleteWorker(workerId).subscribe((result) => {
       console.log(result);
     });
+    this.newWorkerObjectList()
   }
 
   editWorker(workerToChangeId: number){
@@ -154,6 +161,7 @@ export class ListWorkersComponent implements OnInit{
     this.editWorkerPopUp = true;
     console.log(this.foundWorkerToEdit.id);
     this.workerObjectToChangeId = workerToChangeId;
+    this.newWorkerObjectList()
   }
 
   SaveDataEditWorker(){
@@ -175,6 +183,7 @@ export class ListWorkersComponent implements OnInit{
     this.workerObjectList[workerObjectToChange].NumerTelefonu = this.editWorkerForm.value.numerTelefonu as unknown as number;
 
     this.stopEdit();
+    this.newWorkerObjectList()
     this.succesStateFlag = true;
   }
 
@@ -184,10 +193,24 @@ export class ListWorkersComponent implements OnInit{
     this.workerObjectToChangeId = 0;
   }
 
+  newMessage(){
+    this.data.changeMessage("hello from listWorkers")
+  }
+
+  newShiftList(){
+    this.data.changeShiftList(this.shiftList);
+  }
+
+  newWorkerObjectList(){
+    this.data.changeWorkerObjectList(this.workerObjectList);
+  }
+
   //test
   testFunction(){
     this.shiftList.push(new ShiftClass(1, this.testDate, this.workerObjectList));
     console.log(this.shiftList);
+    this.newMessage();
+    this.newShiftList();
   }
 
 
