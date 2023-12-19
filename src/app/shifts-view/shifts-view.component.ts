@@ -42,34 +42,26 @@ export class ShiftsViewComponent implements OnInit {
     this.shiftListTest = allData;
 
     // Przetwórz dane i utwórz obiekty WorkerClass
-    // this.workerObjectList = this.workerData.map((workerDataItem: any) => {
-    //   return new WorkerClass(
-    //     workerDataItem.id,
-    //     workerDataItem.haslo,
-    //     workerDataItem.imie,
-    //     workerDataItem.nazwisko,
-    //     workerDataItem.ulica,
-    //     workerDataItem.numerDomu,
-    //     workerDataItem.miasto,
-    //     workerDataItem.kodPocztowy,
-    //     workerDataItem.numerTelefonu,
-    //     workerDataItem.email,
-    //     workerDataItem.stanowiskoId,
-    //     workerDataItem.dzialID
-    //   );
-    // });
-    // this.newWorkerObjectList()
+    this.shiftList = this.shiftListTest.map((workerShiftItem: any) => {
+      return new ShiftClass(
+        workerShiftItem.id,
+        workerShiftItem.date,
+        workerShiftItem.workers as unknown as WorkerClass[]
+      );
+    });
+    this.newShiftList()
+    console.log(this.shiftList[0].Workers[0]);
   }
-
 
   deleteShift(shiftId: number){
     let index = this.shiftList.findIndex((shift: ShiftClass) => shift.Id === shiftId);
     if (index !== -1) {
-        this.shiftList.splice(index, 1);
-        this.newShiftList();
-        console.log("delete shift");
-        console.log(this.shiftList);
+      this.shiftList.splice(index, 1);
     }
+    this.worker.deleteShifts(shiftId).subscribe((result) => {
+      console.log(result);
+    });
+    this.newShiftList();
   }
 
   getCurrentDateTime(): string {
@@ -86,11 +78,18 @@ export class ShiftsViewComponent implements OnInit {
 
   SaveData(){
     console.log(this.addShiftForm.value);
+    
     this.shiftList.push(new ShiftClass(this.testId, this.addShiftForm.value.date as unknown as Date, this.addShiftForm.value.workers as unknown as WorkerClass[]));
-    this.addShiftForm.reset();
+
+    this.worker.saveShiftsData(this.addShiftForm.value).subscribe((result)=>{
+      console.log(result);
+      this.addShiftForm.reset();
+    });
     this.testId++;
 
   }
+
+
 
 
 

@@ -73,11 +73,96 @@
       "haslo": ""
     }
   ],
-  "shifts":[
+  "shifts": [
     {
-      "id": 1,
-      "date": "",
-      "WorkerClass": []
+      "date": "2023-12-29T00:43",
+      "workers": [
+        {
+          "id": 6,
+          "haslo": "haslo123",
+          "imie": "Karolina",
+          "nazwisko": "Malinowska",
+          "ulica": "Szybka",
+          "numerDomu": 12,
+          "miasto": "Łomża",
+          "kodPocztowy": "14-123",
+          "numerTelefonu": 759604819,
+          "email": "alicja@wp.pl"
+        },
+        {
+          "id": 7,
+          "haslo": "Haslo123",
+          "imie": "Rafał",
+          "nazwisko": "Niedźwiedzki",
+          "ulica": "Jemeńska",
+          "numerDomu": 12,
+          "miasto": "Kraków",
+          "kodPocztowy": "13-456",
+          "numerTelefonu": 895741232,
+          "email": "rafal@gmail.com"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "date": "2023-12-23T01:05",
+      "workers": [
+        {
+          "id": 6,
+          "haslo": "haslo123",
+          "imie": "Karolina",
+          "nazwisko": "Malinowska",
+          "ulica": "Szybka",
+          "numerDomu": 12,
+          "miasto": "Łomża",
+          "kodPocztowy": "14-123",
+          "numerTelefonu": 759604819,
+          "email": "alicja@wp.pl"
+        },
+        {
+          "id": 7,
+          "haslo": "Haslo123",
+          "imie": "Rafał",
+          "nazwisko": "Niedźwiedzki",
+          "ulica": "Jemeńska",
+          "numerDomu": 12,
+          "miasto": "Kraków",
+          "kodPocztowy": "13-456",
+          "numerTelefonu": 895741232,
+          "email": "rafal@gmail.com"
+        }
+      ],
+      "id": 3
+    },
+    {
+      "date": "2023-12-30T01:14",
+      "workers": [
+        {
+          "id": 6,
+          "haslo": "haslo123",
+          "imie": "Karolina",
+          "nazwisko": "Malinowska",
+          "ulica": "Szybka",
+          "numerDomu": 12,
+          "miasto": "Łomża",
+          "kodPocztowy": "14-123",
+          "numerTelefonu": 759604819,
+          "email": "alicja@wp.pl"
+        },
+        {
+          "id": 8,
+          "haslo": "jakies123",
+          "imie": "Kamil",
+          "nazwisko": "Bruszewski",
+          "ulica": "Sprytna",
+          "numerDomu": 99,
+          "miasto": "Kałuża",
+          "kodPocztowy": "41-963",
+          "numerTelefonu": 857412369,
+          "email": "kamcz@gniezno.pl"
+        }
+      ],
+      "id": 4
     }
   ]
 }
