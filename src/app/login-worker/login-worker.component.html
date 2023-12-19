@@ -18,10 +18,11 @@
   <hr>
   <h2>Panel pracownika - {{loggedWorkerInfo}}</h2>
   <div id="managerMenu">
-    <button id="wylogowano" (click)="wyglogowano()" type="button" class="btn btn-primary mb-2">Wyloguj</button>
+    <button id="showShiftListStatus" (click)="changeOutPutActiveList('0')" type="button" class="btn btn-primary mb-2">Wyświetl moje zmiany</button>
+    <button id="wylogowano" (click)="wylogowano()" type="button" class="btn btn-primary mb-2">Wyloguj</button>
   </div>
   <div id="managerPanelOutput">
-
+    <app-worker-shifts [workerInfo]="loggedWorkerInfo" id="showShiftListStatus" *ngIf='outPutActiveList[0] == true'></app-worker-shifts>
   </div>
 
 </div>

@@ -18,38 +18,54 @@ export class ShiftsViewComponent implements OnInit {
   shiftList: ShiftClass[] = [];
   shiftListTest: any = [];
   workerObjectList: WorkerClass[] = [];
-  testDate: Date = new Date(2023, 0, 1);
 
-  //test variables
-  testId: number = 2;
+  testId: number;
 
   addShiftForm = new FormGroup({date: new FormControl(''), workers: new FormControl('')});
 
   constructor(private data: DaneService, private datePipe: DatePipe, private worker:WorkersService){
     this.initializeData();
+    this.testId = this.shiftListTest.length;
   }
 
   ngOnInit(): void {
     this.data.currentshiftList.subscribe(shiftList => this.shiftList = shiftList);
     this.data.currentWorkerObjectList.subscribe(workerObjectList => this.workerObjectList = workerObjectList);
+    this.initializeData();
+    this.testId = this.shiftListTest.length;
   }
 
   async initializeData(): Promise<void> {
     const allData = await this.worker.getAllShifts().toPromise();
-    console.log("import zmian");
-    console.log(allData);
     this.shiftListTest = allData;
 
     // Przetwórz dane i utwórz obiekty WorkerClass
-    this.shiftList = this.shiftListTest.map((workerShiftItem: any) => {
-      return new ShiftClass(
+    this.shiftList = [];
+    this.shiftListTest.forEach((workerShiftItem: any) => {
+      let shiftClass: ShiftClass = new ShiftClass(
         workerShiftItem.id,
         workerShiftItem.date,
-        workerShiftItem.workers as unknown as WorkerClass[]
+        []
       );
+      shiftClass.Workers = workerShiftItem.workers.map((workerData: any) => {
+        return new WorkerClass(
+          workerData.id,
+          workerData.haslo,
+          workerData.imie,
+          workerData.nazwisko,
+          workerData.ulica,
+          workerData.numerDomu,
+          workerData.miasto,
+          workerData.kodPocztowy,
+          workerData.numerTelefonu,
+          workerData.email,
+          workerData.stanowiskoId,
+          workerData.dzialID
+        );
+      });
+      this.shiftList.push(shiftClass);
     });
     this.newShiftList()
-    console.log(this.shiftList[0].Workers[0]);
   }
 
   deleteShift(shiftId: number){
@@ -80,23 +96,12 @@ export class ShiftsViewComponent implements OnInit {
     this.shiftList.push(new ShiftClass(this.testId, this.addShiftForm.value.date as unknown as Date, this.addShiftForm.value.workers as unknown as WorkerClass[]));
 
     this.worker.saveShiftsData(this.addShiftForm.value).subscribe((result)=>{
-      console.log(result);
       this.addShiftForm.reset();
     });
-    this.testId++;
 
   }
 
   newShiftList(){
     this.data.changeShiftList(this.shiftList);
   }
-
-  addShiftToList(){
-    this.shiftList.push(new ShiftClass(this.testId, this.testDate, this.workerObjectList));
-    this.testId++;
-  }
-
-
-
-
 }

@@ -15,6 +15,7 @@ import { WorkerSearchPipe } from './pipes/worker-search.pipe';
 import { FormsModule } from '@angular/forms';
 import { ShiftsViewComponent } from './shifts-view/shifts-view.component';
 import { MouseDirective } from './dyrektywy/mouse.directive';
+import { WorkerShiftsComponent } from './worker-shifts/worker-shifts.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { MouseDirective } from './dyrektywy/mouse.directive';
     AddWorkerComponent,
     WorkerSearchPipe,
     ShiftsViewComponent,
-    MouseDirective
+    MouseDirective,
+    WorkerShiftsComponent
   ],
   imports: [
     BrowserModule,

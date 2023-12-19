@@ -13,9 +13,15 @@ export class LoginWorkerComponent implements OnInit{
   loginAsWorker = new FormGroup({imie: new FormControl(''), nazwisko: new FormControl(''), haslo: new FormControl('')});
   loggedWorkerInfo: string = "";
   workersData: any=[];
+  showShiftList: boolean;
+
+  outPutActiveList: boolean[];
 
   constructor(private worker:WorkersService){
-
+    this.showShiftList = false;
+    this.outPutActiveList = [
+      this.showShiftList
+    ];
   }
 
   ngOnInit(): void {
@@ -29,7 +35,7 @@ export class LoginWorkerComponent implements OnInit{
 
   loginAsWorkerFunc(){
     console.log(this.loginAsWorker.value);
-    let ifWorkerExist = this.workersData.some((obj: { imie: string; nazwisko: string; haslo: string; }) =>
+    let ifWorkerExist = this.workersData.some((obj: { imie: string; nazwisko: string; haslo: string;}) =>
       obj.imie === this.loginAsWorker.value.imie && obj.nazwisko === this.loginAsWorker.value.nazwisko && obj.haslo === this.loginAsWorker.value.haslo
     );
     if(ifWorkerExist){
@@ -41,7 +47,20 @@ export class LoginWorkerComponent implements OnInit{
     }
   }
 
-  wyglogowano(){
+  changeOutPutActiveList(buttonId: string){
+    //ustawienie wszystkich elementów jako off
+    this.outPutActiveList = this.outPutActiveList.map(() => false);
+
+    // ustawienie elementu pobranego z przycisku na true
+    const index = this.outPutActiveList.findIndex((element, idx) => idx === +buttonId);
+    if (index !== -1) {
+      this.outPutActiveList[index] = true;
+    }
+    console.log(this.outPutActiveList);
+
+  }
+
+  wylogowano(){
       this.loginStatus = false;
   }
 

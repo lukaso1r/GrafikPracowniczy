@@ -2,7 +2,7 @@
   "workers": [
     {
       "imie": "Olaf",
-      "nazwisko": "Topór",
+      "nazwisko": "Topor",
       "email": "email@wp.pl",
       "haslo": "haslo123",
       "ulica": "Lipowa",
@@ -30,7 +30,7 @@
     },
     {
       "imie": "Rafał",
-      "nazwisko": "Niedźwiedzki",
+      "nazwisko": "Niedzwiedzki",
       "email": "rafal@gmail.com",
       "haslo": "Haslo123",
       "ulica": "Jemeńska",
@@ -60,49 +60,11 @@
   "managers": [
     {
       "id": 1,
-      "imie": "Łukasz",
+      "imie": "Lukasz",
       "nazwisko": "Kaliszewicz",
       "stanowisko": "Młodszy Maanger",
       "haslo": "haslo"
-    },
-    {
-      "id": 2,
-      "imie": "admin",
-      "nazwisko": "",
-      "stanowisko": "",
-      "haslo": ""
     }
   ],
-  "shifts": [
-    {
-      "date": "2024-01-04T01:17",
-      "workers": [
-        {
-          "id": 6,
-          "haslo": "haslo123",
-          "imie": "Karolina",
-          "nazwisko": "Malinowska",
-          "ulica": "Szybka",
-          "numerDomu": 12,
-          "miasto": "Łomża",
-          "kodPocztowy": "14-123",
-          "numerTelefonu": 759604819,
-          "email": "alicja@wp.pl"
-        },
-        {
-          "id": 7,
-          "haslo": "Haslo123",
-          "imie": "Rafał",
-          "nazwisko": "Niedźwiedzki",
-          "ulica": "Jemeńska",
-          "numerDomu": 12,
-          "miasto": "Kraków",
-          "kodPocztowy": "13-456",
-          "numerTelefonu": 895741232,
-          "email": "rafal@gmail.com"
-        }
-      ],
-      "id": 1
-    }
-  ]
+  "shifts": []
 }

@@ -34,6 +34,4 @@ export class DaneService {
   changeWorkerObjectList(workerObjectList: WorkerClass[]){
     this.workerObjectListSource.next(workerObjectList);
   }
-
-  
 }
