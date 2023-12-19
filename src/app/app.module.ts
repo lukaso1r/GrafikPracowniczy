@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { WorkerSearchPipe } from './pipes/worker-search.pipe';
 import { FormsModule } from '@angular/forms';
 import { ShiftsViewComponent } from './shifts-view/shifts-view.component';
+import { MouseDirective } from './dyrektywy/mouse.directive';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { ShiftsViewComponent } from './shifts-view/shifts-view.component';
     ListWorkersComponent,
     AddWorkerComponent,
     WorkerSearchPipe,
-    ShiftsViewComponent
+    ShiftsViewComponent,
+    MouseDirective
   ],
   imports: [
     BrowserModule,
