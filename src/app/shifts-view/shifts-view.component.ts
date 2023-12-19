@@ -20,7 +20,6 @@ export class ShiftsViewComponent implements OnInit {
   workerObjectList: WorkerClass[] = [];
   testDate: Date = new Date(2023, 0, 1);
 
-
   //test variables
   testId: number = 2;
 
@@ -75,10 +74,9 @@ export class ShiftsViewComponent implements OnInit {
     return `${year}-${month}-${day}T${hours}:${minutes}`;
   }
 
-
   SaveData(){
     console.log(this.addShiftForm.value);
-    
+
     this.shiftList.push(new ShiftClass(this.testId, this.addShiftForm.value.date as unknown as Date, this.addShiftForm.value.workers as unknown as WorkerClass[]));
 
     this.worker.saveShiftsData(this.addShiftForm.value).subscribe((result)=>{
@@ -88,10 +86,6 @@ export class ShiftsViewComponent implements OnInit {
     this.testId++;
 
   }
-
-
-
-
 
   newShiftList(){
     this.data.changeShiftList(this.shiftList);
