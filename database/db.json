@@ -66,5 +66,43 @@
       "haslo": "haslo"
     }
   ],
-  "shifts": []
+  "shifts": [],
+  "messages": [
+    {
+      "id": 1,
+      "senderId": 6,
+      "receiverId": 1,
+      "senderName": "Karolina Malinowska",
+      "receiverName": "Lukasz Kaliszewicz",
+      "content": "Cześć, potrzebuję wolnego dnia w najbliższym tygodniu."
+    },
+    {
+      "id": 2,
+      "senderId": 1,
+      "receiverId": 6,
+      "senderName": "Lukasz Kaliszewicz",
+      "receiverName": "Karolina Malinowska",
+      "content": "Okej, sprawdzę i dam znać czy to możliwe. Dzięki za informację!"
+    },
+    {
+      "id": 3,
+      "senderId": 7,
+      "receiverId": 1,
+      "senderName": "Rafał Niedzwiedzki",
+      "receiverName": "Lukasz Kaliszewicz",
+      "content": "Hej, czy mógłbym poprosić o zmianę w grafiku na przyszły tydzień?"
+    },
+    {
+      "id": 4,
+      "senderId": 1,
+      "receiverId": 7,
+      "senderName": "Lukasz Kaliszewicz",
+      "receiverName": "Rafał Niedzwiedzki",
+      "content": "Tak, oczywiście. Sprawdzę i dostosuję grafik. Dzięki za zgłoszenie!"
+    }
+  ]
+
+
+
+
 }

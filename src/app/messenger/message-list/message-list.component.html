@@ -1,0 +1,14 @@
+<!-- message-list.component.html -->
+
+<div *ngFor="let message of messages">
+  <div>
+    <strong>Od:</strong> {{ message.senderName }}
+  </div>
+  <div>
+    <strong>Do:</strong> {{ message.receiverName }}
+  </div>
+  <div>
+    <strong>Treść:</strong> {{ message.content }}
+  </div>
+  <hr>
+</div>
