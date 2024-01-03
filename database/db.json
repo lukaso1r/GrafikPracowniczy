@@ -108,6 +108,48 @@
         }
       ],
       "id": 1
+    },
+    {
+      "date": "2024-01-03T03:44",
+      "workers": [
+        {
+          "id": 5,
+          "haslo": "haslo123",
+          "imie": "Olaf",
+          "nazwisko": "Topor",
+          "ulica": "Lipowa",
+          "numerDomu": 2,
+          "miasto": "Bialystok",
+          "kodPocztowy": "11-111",
+          "numerTelefonu": 125488523,
+          "email": "email@wp.pl"
+        },
+        {
+          "id": 6,
+          "haslo": "haslo123",
+          "imie": "Karolina",
+          "nazwisko": "Malinowska",
+          "ulica": "Szybka",
+          "numerDomu": 12,
+          "miasto": "Łomża",
+          "kodPocztowy": "14-123",
+          "numerTelefonu": 759604819,
+          "email": "alicja@wp.pl"
+        },
+        {
+          "id": 7,
+          "haslo": "Haslo123",
+          "imie": "Rafał",
+          "nazwisko": "Niedzwiedzki",
+          "ulica": "Jemeńska",
+          "numerDomu": 12,
+          "miasto": "Kraków",
+          "kodPocztowy": "13-456",
+          "numerTelefonu": 895741232,
+          "email": "rafal@gmail.com"
+        }
+      ],
+      "id": 2
     }
   ],
   "messages": [
@@ -262,6 +304,38 @@
       "receiverName": "Rafał Niedzwiedzki",
       "content": "Cześć Rafał jak robotaju",
       "id": 19
+    },
+    {
+      "senderId": 5,
+      "senderName": "Olaf Topor",
+      "receiverId": 2,
+      "receiverName": "Olaf Topor",
+      "content": "sdsadsad",
+      "id": 20
+    },
+    {
+      "senderId": 1,
+      "senderName": "Lukasz Kaliszewicz",
+      "receiverId": 2,
+      "receiverName": "Olaf Topor",
+      "content": "Cześć masz nową zmianę jak coś!",
+      "id": 21
+    },
+    {
+      "senderId": 1,
+      "senderName": "Lukasz Kaliszewicz",
+      "receiverId": 2,
+      "receiverName": "Karolina Malinowska",
+      "content": "asdsad",
+      "id": 22
+    },
+    {
+      "senderId": 5,
+      "senderName": "Olaf Topor",
+      "receiverId": 2,
+      "receiverName": "Karolina Malinowska",
+      "content": "sad",
+      "id": 23
     }
   ]
 }

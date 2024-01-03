@@ -11,7 +11,7 @@
   <div id="messagesDiv" *ngIf="showTypeStatus === 0">
     <h4>Odebrane</h4>
     <div *ngFor="let message of messages">
-      <div *ngIf="message.receiverName === 'Lukasz Kaliszewicz'">
+      <div *ngIf="message.receiverName == loggedPersonName + ' ' + loggedPersonSurname">
         <div>
           <strong>Od:</strong> {{ message.senderName }}
         </div>
@@ -28,7 +28,7 @@
   <div id="messagesDiv" *ngIf="showTypeStatus === 1">
     <h4>Wysłane</h4>
     <div *ngFor="let message of messages">
-      <div *ngIf="message.senderName === 'Lukasz Kaliszewicz'">
+      <div *ngIf="message.senderName === loggedPersonName + ' ' + loggedPersonSurname">
         <div>
           <strong>Od:</strong> {{ message.senderName }}
         </div>

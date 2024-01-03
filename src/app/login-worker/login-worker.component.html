@@ -25,5 +25,12 @@
     <app-worker-shifts [workerInfo]="loggedWorkerInfo" id="showShiftListStatus" *ngIf='outPutActiveList[0] == true'></app-worker-shifts>
   </div>
 
+  <app-message-list
+[loggedPersonId]="loggedPersonId"
+[loggedPersonName]="loggedPersonName"
+[loggedPersonSurname]="loggedPersonSurname"
+>
+</app-message-list>
+
 </div>
 

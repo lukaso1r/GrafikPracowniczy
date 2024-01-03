@@ -12,6 +12,13 @@ export class LoginWorkerComponent implements OnInit{
   loginStatus: boolean = false;
   loginAsWorker = new FormGroup({imie: new FormControl(''), nazwisko: new FormControl(''), haslo: new FormControl('')});
   loggedWorkerInfo: string = "";
+
+  // Informacje o zalogowanej osobie
+  loggedPersonId = 0;
+  loggedPersonName= "testImie";
+  loggedPersonSurname = "testNazwisko";
+
+
   workersData: any=[];
   showShiftList: boolean;
 
@@ -41,7 +48,17 @@ export class LoginWorkerComponent implements OnInit{
     if(ifWorkerExist){
       this.loginStatus = true;
       this.loggedWorkerInfo = this.loginAsWorker.value.imie + " " + this.loginAsWorker.value.nazwisko ;
+
+      let foundWorker = this.workersData.find((obj: { imie: string; nazwisko: string; haslo: string;}) =>
+      obj.imie === this.loginAsWorker.value.imie && obj.nazwisko === this.loginAsWorker.value.nazwisko && obj.haslo === this.loginAsWorker.value.haslo
+    );
+      this.loggedPersonId = foundWorker.id;
+      this.loggedPersonName = foundWorker.imie as string;
+      this.loggedPersonSurname = foundWorker.nazwisko as string;
+
       this.loginAsWorker.reset({});
+
+
     }else{
       alert("Podano złe dane");
     }

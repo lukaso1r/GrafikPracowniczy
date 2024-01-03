@@ -22,10 +22,13 @@ export class MessageFormComponent {
   content: string = '';
   allData: any = null;
 
+  succesStateFlag: boolean;
+
 
 
   constructor(private messageService: MessageService, private worker:WorkersService) {
     this.loadWorkers();
+    this.succesStateFlag = false;
   }
 
   async loadWorkers(){
@@ -39,6 +42,7 @@ export class MessageFormComponent {
       this.messageService.sendMessage(this.loggedPersonId, this.loggedPersonName + " " + this.loggedPersonSurname, 2, this.fullName, this.content).subscribe(
         (data: any) => {
           console.log('Wiadomość została wysłana:', data);
+          this.succesStateFlag = true;
           // Opcjonalnie możesz tutaj dodać logikę obsługi, np. wyczyszczenie formularza lub zaktualizowanie listy wiadomości.
         },
         (error) => {
