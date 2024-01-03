@@ -1,14 +1,33 @@
 <!-- message-list.component.html -->
 
-<div *ngFor="let message of messages">
-  <div>
-    <strong>Od:</strong> {{ message.senderName }}
-  </div>
-  <div>
-    <strong>Do:</strong> {{ message.receiverName }}
-  </div>
-  <div>
-    <strong>Treść:</strong> {{ message.content }}
-  </div>
-  <hr>
+<!-- message-list.component.html -->
+
+
+<div>
+  <p>Logged Person ID: {{ loggedPersonId }}</p>
+  <p>Logged Person Name: {{ loggedPersonName }}</p>
+  <p>Logged Person Surname: {{ loggedPersonSurname }}</p>
+  <!-- ... reszta logiki -->
 </div>
+
+
+<div>
+  <h2>Lista wiadomości</h2>
+  <button (click)="refreshMessages()">Odśwież</button>
+  <div *ngFor="let message of messages">
+    <div>
+      <strong>Od:</strong> {{ message.senderName }}
+    </div>
+    <div>
+      <strong>Do:</strong> {{ message.receiverName }}
+    </div>
+    <div>
+      <strong>Treść:</strong> {{ message.content }}
+    </div>
+    <hr>
+  </div>
+</div>
+
+
+<h1>Wyślij wiadomość</h1>
+<app-message-form></app-message-form>

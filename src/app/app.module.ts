@@ -17,6 +17,7 @@ import { ShiftsViewComponent } from './shifts-view/shifts-view.component';
 import { MouseDirective } from './dyrektywy/mouse.directive';
 import { WorkerShiftsComponent } from './worker-shifts/worker-shifts.component';
 import { MessageListComponent } from './messenger/message-list/message-list.component';
+import { MessageFormComponent } from './messenger/message-form/message-form.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { MessageListComponent } from './messenger/message-list/message-list.comp
     ShiftsViewComponent,
     MouseDirective,
     WorkerShiftsComponent,
-    MessageListComponent
+    MessageListComponent,
+    MessageFormComponent
   ],
   imports: [
     BrowserModule,

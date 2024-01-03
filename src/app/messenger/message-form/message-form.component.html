@@ -1,0 +1,13 @@
+<!-- message-form.component.html -->
+
+<div>
+  <h2>Nowa wiadomość</h2>
+  <form (ngSubmit)="sendMessage()" #messageForm="ngForm">
+    <div>
+      <label for="content">Treść wiadomości:</label>
+      <textarea id="content" name="content" [(ngModel)]="content" required></textarea>
+    </div>
+
+    <button type="submit" [disabled]="!messageForm.valid">Wyślij</button>
+  </form>
+</div>

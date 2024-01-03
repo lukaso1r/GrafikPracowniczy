@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {FormGroup, FormControl} from '@angular/forms';
 import {WorkersService} from '../workers.service';
 
@@ -9,7 +9,16 @@ import {WorkersService} from '../workers.service';
 })
 export class LoginManagerComponent implements OnInit{
 
-  loginStatus: boolean = false;;
+  loginStatus: boolean = false;
+
+  // Informacje o zalogowanej osobie
+  loggedPersonId = 0;
+  loggedPersonName= "testImie";
+  loggedPersonSurname = "testNazwisko";
+
+
+  messeage = "wiadomosc";
+
   showWorkerListStatus: boolean;
   showAddWorkerStatus: boolean;
   showCalencdarStatus: boolean;
@@ -64,7 +73,17 @@ export class LoginManagerComponent implements OnInit{
     );
     if(ifManagerExist){
       this.loginStatus = true;
-      this.loggedManagerInfo = this.loginAsManager.value.imie + " " + this.loginAsManager.value.nazwisko ;
+
+      //Przypisanie danych do obecnie zalogowanej osoby
+      let foundManager = this.managersData.find((obj: { imie: string; nazwisko: string; haslo: string; }) =>
+        obj.imie === this.loginAsManager.value.imie && obj.nazwisko === this.loginAsManager.value.nazwisko && obj.haslo === this.loginAsManager.value.haslo
+      );
+      this.loggedManagerInfo = this.loginAsManager.value.imie + " " + this.loginAsManager.value.nazwisko;
+
+      this.loggedPersonId = foundManager.id;
+      this.loggedPersonName = foundManager.imie as string;
+      this.loggedPersonSurname = foundManager.nazwisko as string;
+
       this.loginAsManager.reset({});
     }else{
       alert("Podano złe dane");

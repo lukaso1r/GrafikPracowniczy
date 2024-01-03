@@ -66,7 +66,50 @@
       "haslo": "haslo"
     }
   ],
-  "shifts": [],
+  "shifts": [
+    {
+      "date": "2024-01-18T20:00",
+      "workers": [
+        {
+          "id": 6,
+          "haslo": "haslo123",
+          "imie": "Karolina",
+          "nazwisko": "Malinowska",
+          "ulica": "Szybka",
+          "numerDomu": 12,
+          "miasto": "Łomża",
+          "kodPocztowy": "14-123",
+          "numerTelefonu": 759604819,
+          "email": "alicja@wp.pl"
+        },
+        {
+          "id": 7,
+          "haslo": "Haslo123",
+          "imie": "Rafał",
+          "nazwisko": "Niedzwiedzki",
+          "ulica": "Jemeńska",
+          "numerDomu": 12,
+          "miasto": "Kraków",
+          "kodPocztowy": "13-456",
+          "numerTelefonu": 895741232,
+          "email": "rafal@gmail.com"
+        },
+        {
+          "id": 8,
+          "haslo": "jakies123",
+          "imie": "Kamil",
+          "nazwisko": "Bruszewski",
+          "ulica": "Sprytna",
+          "numerDomu": 99,
+          "miasto": "Kałuża",
+          "kodPocztowy": "41-963",
+          "numerTelefonu": 857412369,
+          "email": "kamcz@gniezno.pl"
+        }
+      ],
+      "id": 1
+    }
+  ],
   "messages": [
     {
       "id": 1,
@@ -99,10 +142,30 @@
       "senderName": "Lukasz Kaliszewicz",
       "receiverName": "Rafał Niedzwiedzki",
       "content": "Tak, oczywiście. Sprawdzę i dostosuję grafik. Dzięki za zgłoszenie!"
+    },
+    {
+      "senderId": 1,
+      "senderName": "NataliaTest",
+      "receiverId": 20,
+      "receiverName": "LukaszTest",
+      "content": "Testowa wiadomość",
+      "id": 5
+    },
+    {
+      "senderId": 1,
+      "senderName": "NataliaTest",
+      "receiverId": 20,
+      "receiverName": "LukaszTest",
+      "content": "Testowa wiadomość",
+      "id": 6
+    },
+    {
+      "senderId": 1,
+      "senderName": "NataliaTest",
+      "receiverId": 20,
+      "receiverName": "LukaszTest",
+      "content": "test",
+      "id": 7
     }
   ]
-
-
-
-
 }

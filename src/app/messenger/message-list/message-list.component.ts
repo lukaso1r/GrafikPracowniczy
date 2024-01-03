@@ -1,6 +1,6 @@
 // message-list.component.ts
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MessageService } from '../../message.service';
 
 @Component({
@@ -11,6 +11,13 @@ import { MessageService } from '../../message.service';
 export class MessageListComponent implements OnInit {
 
   messages: any[] = [];
+  @Input() loggedPersonId: number = 2;
+  @Input() loggedPersonName: string = "";
+  @Input() loggedPersonSurname: string = "";
+
+  
+
+
 
   constructor(private messageService: MessageService) { }
 
@@ -21,11 +28,15 @@ export class MessageListComponent implements OnInit {
   loadMessages() {
     this.messageService.getMessages().subscribe(
       (data: any) => {
-        this.messages = data;
+        this.messages = data.reverse(); // Odwróć listę przed przypisaniem do zmiennej.
       },
       (error) => {
         console.error('Wystąpił błąd podczas pobierania wiadomości:', error);
       }
     );
+  }
+
+  refreshMessages() {
+    this.loadMessages();
   }
 }
