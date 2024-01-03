@@ -29,32 +29,18 @@
       "id": 6
     },
     {
-      "imie": "Rafał",
+      "imie": "Karol",
       "nazwisko": "Niedzwiedzki",
       "email": "rafal@gmail.com",
       "haslo": "Haslo123",
       "ulica": "Jemeńska",
       "numerDomu": 12,
       "miasto": "Kraków",
-      "kodPocztowy": "13-456",
-      "numerTelefonu": 895741232,
-      "stanowidkoId": "",
-      "dzialId": "",
+      "kodPocztowy": "13-454",
+      "numerTelefonu": 895741239,
+      "stanowidkoId": null,
+      "dzialId": null,
       "id": 7
-    },
-    {
-      "imie": "Kamil",
-      "nazwisko": "Bruszewski",
-      "email": "kamcz@gniezno.pl",
-      "haslo": "jakies123",
-      "ulica": "Sprytna",
-      "numerDomu": 99,
-      "miasto": "Kałuża",
-      "kodPocztowy": "41-963",
-      "numerTelefonu": 857412369,
-      "stanowidkoId": "",
-      "dzialId": "",
-      "id": 8
     }
   ],
   "managers": [
@@ -66,5 +52,78 @@
       "haslo": "haslo"
     }
   ],
-  "shifts": []
+  "shifts": [
+    {
+      "date": "2023-12-22T15:43",
+      "workers": [
+        {
+          "id": 6,
+          "haslo": "haslo123",
+          "imie": "Karolina",
+          "nazwisko": "Malinowska",
+          "ulica": "Szybka",
+          "numerDomu": 12,
+          "miasto": "Łomża",
+          "kodPocztowy": "14-123",
+          "numerTelefonu": 759604819,
+          "email": "alicja@wp.pl"
+        },
+        {
+          "id": 7,
+          "haslo": "Haslo123",
+          "imie": "Rafał",
+          "nazwisko": "Niedzwiedzki",
+          "ulica": "Jemeńska",
+          "numerDomu": 12,
+          "miasto": "Kraków",
+          "kodPocztowy": "13-456",
+          "numerTelefonu": 895741232,
+          "email": "rafal@gmail.com"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "date": "2023-12-27T15:37",
+      "workers": [
+        {
+          "id": 5,
+          "haslo": "haslo123",
+          "imie": "Olaf",
+          "nazwisko": "Topor",
+          "ulica": "Lipowa",
+          "numerDomu": 2,
+          "miasto": "Bialystok",
+          "kodPocztowy": "11-111",
+          "numerTelefonu": 125488523,
+          "email": "email@wp.pl"
+        },
+        {
+          "id": 6,
+          "haslo": "haslo123",
+          "imie": "Karolina",
+          "nazwisko": "Malinowska",
+          "ulica": "Szybka",
+          "numerDomu": 12,
+          "miasto": "Łomża",
+          "kodPocztowy": "14-123",
+          "numerTelefonu": 759604819,
+          "email": "alicja@wp.pl"
+        },
+        {
+          "id": 7,
+          "haslo": "Haslo123",
+          "imie": "Karol",
+          "nazwisko": "Niedzwiedzki",
+          "ulica": "Jemeńska",
+          "numerDomu": 12,
+          "miasto": "Kraków",
+          "kodPocztowy": "13-454",
+          "numerTelefonu": 895741239,
+          "email": "rafal@gmail.com"
+        }
+      ],
+      "id": 3
+    }
+  ]
 }

@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { ShiftsViewComponent } from './shifts-view/shifts-view.component';
 import { MouseDirective } from './dyrektywy/mouse.directive';
 import { WorkerShiftsComponent } from './worker-shifts/worker-shifts.component';
+import { MesseageMenuComponent } from './messenger/messeage-menu/messeage-menu.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { WorkerShiftsComponent } from './worker-shifts/worker-shifts.component';
     WorkerSearchPipe,
     ShiftsViewComponent,
     MouseDirective,
-    WorkerShiftsComponent
+    WorkerShiftsComponent,
+    MesseageMenuComponent
   ],
   imports: [
     BrowserModule,
