@@ -1,23 +1,11 @@
-<!-- message-form.component.html -->
 <button (click)="test()">test</button>
 <div>
-  <h2>Nowa wiadomość</h2>
-  <form (ngSubmit)="sendMessage()" #messageForm="ngForm">
-    <div>
-      <label for="content">Treść wiadomości:</label>
-      <textarea id="content" name="content" [(ngModel)]="content" required></textarea>
-    </div>
-
-    <button type="submit" [disabled]="!messageForm.valid">Wyślij</button>
-  </form>
-
-  <form id="sendMessageform" class="form-column"  (ngSubmit)="test()">
-    <select  class="form-control" name="selectedWorker" [(ngModel)]="fullName">
+  <form id="sendMessageform" class="form-column" (ngSubmit)="sendMessage()">
+    <select class="form-control select-arrow" name="selectedWorker" [(ngModel)]="fullName" required>
+      <option value="" disabled selected>&#9660; Wybierz pracownika</option>
       <option *ngFor="let worker of allData" [ngValue]="worker.imie + ' ' + worker.nazwisko">{{ worker.imie }} {{ worker.nazwisko }}</option>
     </select>
-    <textarea id="content" name="content" [(ngModel)]="content"></textarea>
-    <button type="submit">Wyślij</button>
+    <textarea id="content" name="content" [(ngModel)]="content" required placeholder="Tutaj wpisz wiadomość"></textarea>
+    <button class="btn btn-primary mb-2" type="submit">Wyślij</button>
   </form>
-
-
 </div>

@@ -246,6 +246,22 @@
       "receiverName": "test",
       "content": "fdgfdg",
       "id": 17
+    },
+    {
+      "senderId": 1,
+      "senderName": "Lukasz Kaliszewicz",
+      "receiverId": 2,
+      "receiverName": "Karolina Malinowska",
+      "content": "Siema karolina",
+      "id": 18
+    },
+    {
+      "senderId": 1,
+      "senderName": "Lukasz Kaliszewicz",
+      "receiverId": 2,
+      "receiverName": "Rafał Niedzwiedzki",
+      "content": "Cześć Rafał jak robotaju",
+      "id": 19
     }
   ]
 }
