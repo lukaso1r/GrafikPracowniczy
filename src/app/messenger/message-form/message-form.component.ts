@@ -1,7 +1,9 @@
 // message-form.component.ts
 
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MessageService } from '../../message.service';
+import {WorkersService} from '../../workers.service';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-message-form',
@@ -10,16 +12,31 @@ import { MessageService } from '../../message.service';
 })
 export class MessageFormComponent {
 
-  senderId: number = 1; // Identyfikator zalogowanego pracownika (do dostosowania)
-  receiverId: number = 20; // Identyfikator odbiorcy (do dostosowania)
-  content: string = '';
+  @Input() loggedPersonId: number = 0;
+  @Input() loggedPersonName: string = "";
+  @Input() loggedPersonSurname: string = "";
 
-  constructor(private messageService: MessageService) { }
+
+
+  fullName: string = "";
+  content: string = '';
+  allData: any = null;
+
+
+
+  constructor(private messageService: MessageService, private worker:WorkersService) {
+    this.loadWorkers();
+  }
+
+  async loadWorkers(){
+    this.allData = await this.worker.getAllWorkers().toPromise();
+    console.log(this.allData);
+  }
 
   sendMessage() {
     // Sprawdź, czy treść wiadomości nie jest pusta, aby uniknąć wysłania pustych wiadomości.
     if (this.content.trim() !== '') {
-      this.messageService.sendMessage(this.senderId, "NataliaTest", this.receiverId, "LukaszTest", this.content).subscribe(
+      this.messageService.sendMessage(this.loggedPersonId, this.loggedPersonName + " " + this.loggedPersonSurname, 2, this.fullName, this.content).subscribe(
         (data: any) => {
           console.log('Wiadomość została wysłana:', data);
           // Opcjonalnie możesz tutaj dodać logikę obsługi, np. wyczyszczenie formularza lub zaktualizowanie listy wiadomości.
@@ -31,5 +48,14 @@ export class MessageFormComponent {
     } else {
       console.warn('Nie można wysłać pustej wiadomości.');
     }
+  }
+
+  test(){
+    // this.loadWorkers();
+    // for (const data of this.allData) {
+    //   console.log(data.imie);
+    // }
+    console.log(this.fullName);
+    console.log(this.content);
   }
 }

@@ -166,6 +166,86 @@
       "receiverName": "LukaszTest",
       "content": "test",
       "id": 7
+    },
+    {
+      "senderId": 1,
+      "senderName": "",
+      "receiverId": 2,
+      "receiverName": "Testowy odbiorca",
+      "content": "Testowa wiadomość z automatycznym id sendera\n",
+      "id": 8
+    },
+    {
+      "senderId": 1,
+      "senderName": "",
+      "receiverId": 2,
+      "receiverName": "Testowy odbiorca",
+      "content": "lalallaaallalala",
+      "id": 9
+    },
+    {
+      "senderId": 1,
+      "senderName": "",
+      "receiverId": 2,
+      "receiverName": "Testowy odbiorca",
+      "content": "lalallaaallalala",
+      "id": 10
+    },
+    {
+      "senderId": 1,
+      "senderName": "",
+      "receiverId": 2,
+      "receiverName": "Testowy odbiorca",
+      "content": "lalallaaallalala",
+      "id": 11
+    },
+    {
+      "senderId": 1,
+      "senderName": "",
+      "receiverId": 2,
+      "receiverName": "Testowy odbiorca",
+      "content": "lalallaaallalala",
+      "id": 12
+    },
+    {
+      "senderId": 1,
+      "senderName": " ",
+      "receiverId": 2,
+      "receiverName": "Testowy odbiorca",
+      "content": "12",
+      "id": 13
+    },
+    {
+      "senderId": 1,
+      "senderName": " ",
+      "receiverId": 2,
+      "receiverName": "Testowy odbiorca",
+      "content": "fxfdf",
+      "id": 14
+    },
+    {
+      "senderId": 1,
+      "senderName": " ",
+      "receiverId": 2,
+      "receiverName": "Testowy odbiorca",
+      "content": "d",
+      "id": 15
+    },
+    {
+      "senderId": 1,
+      "senderName": "Lukasz Kaliszewicz",
+      "receiverId": 2,
+      "receiverName": "Testowy odbiorca",
+      "content": "sdffffffff",
+      "id": 16
+    },
+    {
+      "senderId": 1,
+      "senderName": "Lukasz Kaliszewicz",
+      "receiverId": 2,
+      "receiverName": "test",
+      "content": "fdgfdg",
+      "id": 17
     }
   ]
 }

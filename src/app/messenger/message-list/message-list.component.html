@@ -1,33 +1,55 @@
-<!-- message-list.component.html -->
-
-<!-- message-list.component.html -->
-
-
-<div>
-  <p>Logged Person ID: {{ loggedPersonId }}</p>
-  <p>Logged Person Name: {{ loggedPersonName }}</p>
-  <p>Logged Person Surname: {{ loggedPersonSurname }}</p>
-  <!-- ... reszta logiki -->
-</div>
-
-
 <div>
   <h2>Lista wiadomości</h2>
-  <button (click)="refreshMessages()">Odśwież</button>
-  <div *ngFor="let message of messages">
-    <div>
-      <strong>Od:</strong> {{ message.senderName }}
-    </div>
-    <div>
-      <strong>Do:</strong> {{ message.receiverName }}
-    </div>
-    <div>
-      <strong>Treść:</strong> {{ message.content }}
-    </div>
-    <hr>
+
+  <div id="messengerButtons">
+    <button class="btn btn-primary mb-2" (click)="showOdebrane()">Odebrane</button>
+    <button class="btn btn-primary mb-2" (click)="showWyslane()">Wysłane</button>
+    <button class="btn btn-primary mb-2" (click)="showNapisz()">Napisz</button>
   </div>
+
+  <button class="btn btn-primary mb-2" (click)="refreshMessages()">Odśwież</button>
+  <div id="messagesDiv" *ngIf="showTypeStatus === 0">
+    <h4>Odebrane</h4>
+    <div *ngFor="let message of messages">
+      <div *ngIf="message.receiverName === 'Lukasz Kaliszewicz'">
+        <div>
+          <strong>Od:</strong> {{ message.senderName }}
+        </div>
+        <div>
+          <strong>Do:</strong> {{ message.receiverName }}
+        </div>
+        <div>
+          <strong>Treść:</strong> {{ message.content }}
+        </div>
+        <hr>
+      </div>
+    </div>
+  </div>
+  <div id="messagesDiv" *ngIf="showTypeStatus === 1">
+    <h4>Wysłane</h4>
+    <div *ngFor="let message of messages">
+      <div *ngIf="message.senderName === 'Lukasz Kaliszewicz'">
+        <div>
+          <strong>Od:</strong> {{ message.senderName }}
+        </div>
+        <div>
+          <strong>Do:</strong> {{ message.receiverName }}
+        </div>
+        <div>
+          <strong>Treść:</strong> {{ message.content }}
+        </div>
+        <hr>
+      </div>
+    </div>
+  </div>
+
+  <div id="messagesDiv" *ngIf="showTypeStatus === 3">
+    <h4>Wyślij wiadomość</h4>
+    <app-message-form
+    [loggedPersonId]="loggedPersonId"
+    [loggedPersonName]="loggedPersonName"
+    [loggedPersonSurname]="loggedPersonSurname">
+  </app-message-form>
 </div>
 
 
-<h1>Wyślij wiadomość</h1>
-<app-message-form></app-message-form>

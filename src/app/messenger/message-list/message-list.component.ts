@@ -15,7 +15,8 @@ export class MessageListComponent implements OnInit {
   @Input() loggedPersonName: string = "";
   @Input() loggedPersonSurname: string = "";
 
-  
+  showTypeStatus = 0;
+
 
 
 
@@ -38,5 +39,19 @@ export class MessageListComponent implements OnInit {
 
   refreshMessages() {
     this.loadMessages();
+  }
+
+  showOdebrane(){
+    this.showTypeStatus = 0;
+    this.refreshMessages();
+  }
+
+  showWyslane(){
+    this.showTypeStatus = 1
+    this.refreshMessages();
+  }
+
+  showNapisz(){
+    this.showTypeStatus = 3;
   }
 }
