@@ -1,9 +1,9 @@
 // message-form.component.ts
 
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import { MessageService } from '../../message.service';
 import {WorkersService} from '../../workers.service';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-message-form',
@@ -16,6 +16,7 @@ export class MessageFormComponent {
   @Input() loggedPersonName: string = "";
   @Input() loggedPersonSurname: string = "";
 
+  @ViewChild('messageForm') messageForm!: NgForm; // Dodaj ViewChild do referencji do formularza
 
 
   fullName: string = "";
@@ -43,7 +44,11 @@ export class MessageFormComponent {
         (data: any) => {
           console.log('Wiadomość została wysłana:', data);
           this.succesStateFlag = true;
-          // Opcjonalnie możesz tutaj dodać logikę obsługi, np. wyczyszczenie formularza lub zaktualizowanie listy wiadomości.
+
+          // Wyczyść formularz po udanym wysłaniu wiadomości
+          this.resetForm();
+
+          // Opcjonalnie możesz tutaj dodać dodatkową logikę obsługi, np. zaktualizowanie listy wiadomości.
         },
         (error) => {
           console.error('Wystąpił błąd podczas wysyłania wiadomości:', error);
@@ -54,11 +59,18 @@ export class MessageFormComponent {
     }
   }
 
+  resetForm() {
+    // Wyczyść wartości formularza
+    this.fullName = '';
+    this.content = '';
+
+    // Skorzystaj z ngForm.reset() aby również zresetować stan formularza
+    if (this.messageForm) {
+      this.messageForm.reset();
+    }
+  }
+
   test(){
-    // this.loadWorkers();
-    // for (const data of this.allData) {
-    //   console.log(data.imie);
-    // }
     console.log(this.fullName);
     console.log(this.content);
   }

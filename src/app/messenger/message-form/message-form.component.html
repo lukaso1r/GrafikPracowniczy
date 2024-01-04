@@ -3,7 +3,7 @@
   <div class="alert alert-success" role="alert" *ngIf="this.succesStateFlag == true">
     Wysłano wiadomość <button (click)="this.succesStateFlag = false">X</button>
   </div>
-  <form id="sendMessageform" class="form-column" (ngSubmit)="sendMessage()">
+  <form id="sendMessageform" class="form-column" (ngSubmit)="sendMessage()" #messageForm="ngForm">
     <select class="form-control select-arrow" name="selectedWorker" [(ngModel)]="fullName" required>
       <option value="" disabled selected>&#9660; Wybierz pracownika</option>
       <option *ngFor="let worker of allData" [ngValue]="worker.imie + ' ' + worker.nazwisko">{{ worker.imie }} {{ worker.nazwisko }}</option>

@@ -336,6 +336,14 @@
       "receiverName": "Karolina Malinowska",
       "content": "sad",
       "id": 23
+    },
+    {
+      "senderId": 1,
+      "senderName": "Lukasz Kaliszewicz",
+      "receiverId": 2,
+      "receiverName": "Olaf Topor",
+      "content": "test kasowania formularza",
+      "id": 24
     }
   ]
 }
