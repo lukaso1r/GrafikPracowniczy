@@ -277,30 +277,6 @@
       "senderId": 1,
       "senderName": "Lukasz Kaliszewicz",
       "receiverId": 2,
-      "receiverName": "Testowy odbiorca",
-      "content": "sdffffffff",
-      "id": 16
-    },
-    {
-      "senderId": 1,
-      "senderName": "Lukasz Kaliszewicz",
-      "receiverId": 2,
-      "receiverName": "test",
-      "content": "fdgfdg",
-      "id": 17
-    },
-    {
-      "senderId": 1,
-      "senderName": "Lukasz Kaliszewicz",
-      "receiverId": 2,
-      "receiverName": "Karolina Malinowska",
-      "content": "Siema karolina",
-      "id": 18
-    },
-    {
-      "senderId": 1,
-      "senderName": "Lukasz Kaliszewicz",
-      "receiverId": 2,
       "receiverName": "Rafał Niedzwiedzki",
       "content": "Cześć Rafał jak robotaju",
       "id": 19
@@ -328,6 +304,14 @@
       "receiverName": "Karolina Malinowska",
       "content": "sad",
       "id": 23
+    },
+    {
+      "senderId": 5,
+      "senderName": "Olaf Topor",
+      "receiverId": 2,
+      "receiverName": "Lukasz Kaliszewicz",
+      "content": "Siema manager",
+      "id": 24
     }
   ]
 }

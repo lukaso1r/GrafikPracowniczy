@@ -22,6 +22,7 @@ export class MessageFormComponent {
   fullName: string = "";
   content: string = '';
   allData: any = null;
+  allManagers:any = null;
 
   succesStateFlag: boolean;
 
@@ -29,12 +30,18 @@ export class MessageFormComponent {
 
   constructor(private messageService: MessageService, private worker:WorkersService) {
     this.loadWorkers();
+    this.loadManagers();
     this.succesStateFlag = false;
   }
 
   async loadWorkers(){
     this.allData = await this.worker.getAllWorkers().toPromise();
     console.log(this.allData);
+  }
+
+  async loadManagers(){
+    this.allManagers = await this.worker.getAllManagers().toPromise();
+    console.log(this.allManagers);
   }
 
   sendMessage() {
