@@ -322,28 +322,12 @@
       "id": 21
     },
     {
-      "senderId": 1,
-      "senderName": "Lukasz Kaliszewicz",
-      "receiverId": 2,
-      "receiverName": "Karolina Malinowska",
-      "content": "asdsad",
-      "id": 22
-    },
-    {
       "senderId": 5,
       "senderName": "Olaf Topor",
       "receiverId": 2,
       "receiverName": "Karolina Malinowska",
       "content": "sad",
       "id": 23
-    },
-    {
-      "senderId": 1,
-      "senderName": "Lukasz Kaliszewicz",
-      "receiverId": 2,
-      "receiverName": "Olaf Topor",
-      "content": "test kasowania formularza",
-      "id": 24
     }
   ]
 }

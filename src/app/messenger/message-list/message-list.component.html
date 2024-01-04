@@ -21,6 +21,8 @@
         <div>
           <strong>Treść:</strong> {{ message.content }}
         </div>
+        <button style="display: flex; flex-direction: row; align-items: center; margin-right: 10px;" (click)="deleteMessage(message.id)" type="button">Usuń z listy <i style="display: flex; align-items: center; padding-left: 5px;" class="fi fi-rr-trash"></i></button>
+
         <hr>
       </div>
     </div>
@@ -38,6 +40,8 @@
         <div>
           <strong>Treść:</strong> {{ message.content }}
         </div>
+        <button style="display: flex; flex-direction: row; align-items: center; margin-right: 10px;" (click)="deleteMessage(message.id)" type="button">Usuń z listy <i style="display: flex; align-items: center; padding-left: 5px;" class="fi fi-rr-trash"></i></button>
+
         <hr>
       </div>
     </div>

@@ -54,4 +54,23 @@ export class MessageListComponent implements OnInit {
   showNapisz(){
     this.showTypeStatus = 3;
   }
+
+  deleteMessage(messageId: number) {
+    this.messageService.deleteMessage(messageId).subscribe(
+      () => {
+        console.log('Wiadomość została usunięta.');
+        // Opcjonalnie możesz tutaj zaktualizować listę wiadomości po usunięciu.
+        this.loadMessages();
+      },
+      (error) => {
+        console.error('Wystąpił błąd podczas usuwania wiadomości:', error);
+      }
+    );
+  }
+
+  test(id:number){
+    console.log("id wiadomosci");
+    console.log(id);
+  }
+
 }
