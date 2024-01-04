@@ -12,7 +12,7 @@ Za pomocą visual studio code i dwóch terminali<br>
 
 Następnie w wyszukiwarce wpisać http://localhost:8080
 
-Wszelkie dane logowania dostępne są w pliku db.json albo po włączeniu json server pod linkiem:
+Wszelkie dane logowania dostępne są w pliku db.json albo po włączeniu json server pod linkiem:<br>
 http://localhost:3000/workers
 http://localhost:3000/managers
 
