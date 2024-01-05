@@ -6,9 +6,14 @@
   <form id="sendMessageform" class="form-column" (ngSubmit)="sendMessage()" #messageForm="ngForm">
     <select class="form-control select-arrow" name="selectedWorker" [(ngModel)]="fullName" required>
       <option value="" disabled selected>&#9660; Wybierz pracownika</option>
-      <option *ngFor="let worker of allData" [ngValue]="worker.imie + ' ' + worker.nazwisko">{{ worker.imie }} {{ worker.nazwisko }}</option>
-      <option *ngFor="let manager of allManagers" [ngValue]="manager.imie + ' ' + manager.nazwisko">{{ manager.imie }} {{ manager.nazwisko }}</option>
+      <optgroup label="Pracownicy">
+        <option *ngFor="let worker of allData" [ngValue]="worker.imie + ' ' + worker.nazwisko">{{ worker.imie }} {{ worker.nazwisko }}</option>
+      </optgroup>
+      <optgroup label="Managerowie">
+        <option *ngFor="let manager of allManagers" [ngValue]="manager.imie + ' ' + manager.nazwisko">{{ manager.imie }} {{ manager.nazwisko }}</option>
+      </optgroup>
     </select>
+
     <textarea id="content" name="content" [(ngModel)]="content" required placeholder="Tutaj wpisz wiadomość"></textarea>
     <button class="btn btn-primary mb-2" type="submit">Wyślij</button>
   </form>

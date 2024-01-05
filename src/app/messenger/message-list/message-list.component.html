@@ -10,7 +10,8 @@
   <button class="btn btn-primary mb-2" (click)="refreshMessages()">Odśwież</button>
   <div id="messagesDiv" *ngIf="showTypeStatus === 0">
     <h4>Odebrane</h4>
-    <div *ngFor="let message of messages">
+    <input type="text" [(ngModel)]="searchText" placeholder="Wyszukaj wiadomość" />
+    <div *ngFor="let message of messages | messageFilter: searchText">
       <div *ngIf="message.receiverName == loggedPersonName + ' ' + loggedPersonSurname">
         <div>
           <strong>Od:</strong> {{ message.senderName }}
@@ -21,7 +22,7 @@
         <div>
           <strong>Treść:</strong> {{ message.content }}
         </div>
-        <button style="display: flex; flex-direction: row; align-items: center; margin-right: 10px;" (click)="deleteMessage(message.id)" type="button">Usuń z listy <i style="display: flex; align-items: center; padding-left: 5px;" class="fi fi-rr-trash"></i></button>
+        <button style="display: flex; flex-direction: row; align-items: center; margin-right: 10px;" (click)="deleteMessage(message.id)" type="button">Usuń <i style="display: flex; align-items: center; padding-left: 5px;" class="fi fi-rr-trash"></i></button>
 
         <hr>
       </div>
@@ -29,7 +30,8 @@
   </div>
   <div id="messagesDiv" *ngIf="showTypeStatus === 1">
     <h4>Wysłane</h4>
-    <div *ngFor="let message of messages">
+    <input type="text" [(ngModel)]="searchText" placeholder="Wyszukaj wiadomość" />
+    <div *ngFor="let message of messages | messageFilter: searchText">
       <div *ngIf="message.senderName === loggedPersonName + ' ' + loggedPersonSurname">
         <div>
           <strong>Od:</strong> {{ message.senderName }}
@@ -40,7 +42,7 @@
         <div>
           <strong>Treść:</strong> {{ message.content }}
         </div>
-        <button style="display: flex; flex-direction: row; align-items: center; margin-right: 10px;" (click)="deleteMessage(message.id)" type="button">Usuń z listy <i style="display: flex; align-items: center; padding-left: 5px;" class="fi fi-rr-trash"></i></button>
+        <button style="display: flex; flex-direction: row; align-items: center; margin-right: 10px;" (click)="deleteMessage(message.id)" type="button">Usuń <i style="display: flex; align-items: center; padding-left: 5px;" class="fi fi-rr-trash"></i></button>
 
         <hr>
       </div>

@@ -312,6 +312,14 @@
       "receiverName": "Lukasz Kaliszewicz",
       "content": "Siema manager",
       "id": 24
+    },
+    {
+      "senderId": 5,
+      "senderName": "Olaf Topor",
+      "receiverId": 2,
+      "receiverName": "Lukasz Kaliszewicz",
+      "content": "testtttt123",
+      "id": 25
     }
   ]
 }

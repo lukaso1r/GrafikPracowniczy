@@ -1,12 +1,13 @@
 // message-list.component.ts
-
 import { Component, OnInit, Input } from '@angular/core';
 import { MessageService } from '../../message.service';
+import { MessageFilterPipe } from '../../pipes/message-filter.pipe'; // Import customowego Pipe
 
 @Component({
   selector: 'app-message-list',
   templateUrl: './message-list.component.html',
-  styleUrls: ['./message-list.component.css']
+  styleUrls: ['./message-list.component.css'],
+  providers: [MessageFilterPipe] // Dodaj Pipe do dostępnych providerów
 })
 export class MessageListComponent implements OnInit {
 
@@ -17,6 +18,7 @@ export class MessageListComponent implements OnInit {
 
   showTypeStatus = 0;
 
+  searchText: string = '';
 
 
 

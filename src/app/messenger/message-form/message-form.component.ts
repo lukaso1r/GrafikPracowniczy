@@ -34,14 +34,37 @@ export class MessageFormComponent {
     this.succesStateFlag = false;
   }
 
-  async loadWorkers(){
+  async loadWorkers() {
     this.allData = await this.worker.getAllWorkers().toPromise();
     console.log(this.allData);
+
+    // Znajdź indeks aktualnie zalogowanego użytkownika w danych pracowników
+    let indexOfLoggedUser = this.allData.findIndex(
+      (worker: any) =>
+        worker.imie === this.loggedPersonName && worker.nazwisko === this.loggedPersonSurname
+    );
+
+    // Jeśli aktualnie zalogowany użytkownik został znaleziony, usuń go z listy pracowników
+    if (indexOfLoggedUser !== -1) {
+      this.allData.splice(indexOfLoggedUser, 1);
+    }
   }
+
 
   async loadManagers(){
     this.allManagers = await this.worker.getAllManagers().toPromise();
     console.log(this.allManagers);
+
+    // Znajdź indeks aktualnie zalogowanego użytkownika w danych pracowników
+    let indexOfLoggedUser = this.allManagers.findIndex(
+      (manager: any) =>
+      manager.imie === this.loggedPersonName && manager.nazwisko === this.loggedPersonSurname
+    );
+
+    // Jeśli aktualnie zalogowany użytkownik został znaleziony, usuń go z listy pracowników
+    if (indexOfLoggedUser !== -1) {
+      this.allManagers.splice(indexOfLoggedUser, 1);
+    }
   }
 
   sendMessage() {

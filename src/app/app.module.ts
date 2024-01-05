@@ -18,6 +18,7 @@ import { MouseDirective } from './dyrektywy/mouse.directive';
 import { WorkerShiftsComponent } from './worker-shifts/worker-shifts.component';
 import { MessageListComponent } from './messenger/message-list/message-list.component';
 import { MessageFormComponent } from './messenger/message-form/message-form.component';
+import { MessageFilterPipe } from './pipes/message-filter.pipe';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { MessageFormComponent } from './messenger/message-form/message-form.comp
     MouseDirective,
     WorkerShiftsComponent,
     MessageListComponent,
-    MessageFormComponent
+    MessageFormComponent,
+    MessageFilterPipe
   ],
   imports: [
     BrowserModule,
