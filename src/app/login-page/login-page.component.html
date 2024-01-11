@@ -1,9 +1,17 @@
-<div id="buttons-home-page" style="padding-bottom: 2%;">
-  <button appMouse (click)="loginWorker()" type="button">Jestem Pracownikiem</button>
-  <button appMouse (click)="loginManager()" type="button">Jestem Managerem</button>
-</div>
+<main>
+  <h1>System zarządzania grafikiem pracowników</h1>
+  <div id="mainPnaelWelcome" *ngIf="loggedStatus === false">
+    <p>Witaj na stronie startowej, wybierz odpowiednią z opcji aby przejść dalej</p>
 
-<div id="loginAs">
-  <div  id="loginAsWorker" *ngIf='selected == "worker"'><app-login-worker></app-login-worker></div>
-  <div  id="loginAsManager" *ngIf="selected == 'manager'"><app-login-manager></app-login-manager></div>
-</div>
+    <div id="buttons-home-page" style="padding-bottom: 2%;">
+      <button appMouse (click)="loginWorker()" type="button">Jestem Pracownikiem</button>
+      <button appMouse (click)="loginManager()" type="button">Jestem Managerem</button>
+    </div>
+  </div>
+
+    <div id="loginAs">
+      <div  id="loginAsWorker" *ngIf='selected == "worker"'><app-login-worker (loggedStatusChange)="handleLoggedStatusChange($event)"></app-login-worker></div>
+      <div  id="loginAsManager" *ngIf="selected == 'manager'"><app-login-manager (loggedStatusChange)="handleLoggedStatusChange($event)"></app-login-manager>
+      </div>
+    </div>
+</main>

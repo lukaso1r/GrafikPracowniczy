@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { WorkersService } from '../workers.service';
 
@@ -10,6 +10,10 @@ import { WorkersService } from '../workers.service';
 export class LoginWorkerComponent implements OnInit{
 
   loginStatus: boolean = false;
+
+  loggedStatus: boolean = false;
+  @Output() loggedStatusChange = new EventEmitter<boolean>();
+
   loginAsWorker = new FormGroup({imie: new FormControl(''), nazwisko: new FormControl(''), haslo: new FormControl('')});
   loggedWorkerInfo: string = "";
 
@@ -21,13 +25,16 @@ export class LoginWorkerComponent implements OnInit{
 
   workersData: any=[];
   showShiftList: boolean;
+  showMessageList: boolean;
 
   outPutActiveList: boolean[];
 
   constructor(private worker:WorkersService){
     this.showShiftList = false;
+    this.showMessageList = true;
     this.outPutActiveList = [
-      this.showShiftList
+      this.showShiftList,
+      this.showMessageList
     ];
   }
 
@@ -56,6 +63,8 @@ export class LoginWorkerComponent implements OnInit{
       this.loggedPersonName = foundWorker.imie as string;
       this.loggedPersonSurname = foundWorker.nazwisko as string;
 
+      this.loggedStatusChange.emit(true);
+
       this.loginAsWorker.reset({});
 
 
@@ -79,6 +88,7 @@ export class LoginWorkerComponent implements OnInit{
 
   wylogowano(){
       this.loginStatus = false;
+      this.loggedStatusChange.emit(false);
   }
 
 }

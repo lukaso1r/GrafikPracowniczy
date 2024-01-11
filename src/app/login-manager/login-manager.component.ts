@@ -16,12 +16,15 @@ export class LoginManagerComponent implements OnInit{
   loggedPersonName= "testImie";
   loggedPersonSurname = "testNazwisko";
 
+  loggedStatus: boolean = false;
+  @Output() loggedStatusChange = new EventEmitter<boolean>();
 
   messeage = "wiadomosc";
 
   showWorkerListStatus: boolean;
   showAddWorkerStatus: boolean;
   showCalencdarStatus: boolean;
+  showMessageStatus: boolean;
 
   outPutActiveList: boolean[];
 
@@ -31,11 +34,13 @@ export class LoginManagerComponent implements OnInit{
     this.showWorkerListStatus = false;
     this.showAddWorkerStatus = false;
     this.showCalencdarStatus = false;
+    this.showMessageStatus = true;
 
     this.outPutActiveList = [
       this.showWorkerListStatus,
       this.showAddWorkerStatus,
-      this.showCalencdarStatus
+      this.showCalencdarStatus,
+      this.showMessageStatus
     ];
   }
 
@@ -52,11 +57,13 @@ export class LoginManagerComponent implements OnInit{
     this.showWorkerListStatus = false;
     this.showAddWorkerStatus = false;
     this.showCalencdarStatus = false;
+    this.showMessageStatus = true;
 
     this.outPutActiveList = [
       this.showWorkerListStatus,
       this.showAddWorkerStatus,
-      this.showCalencdarStatus
+      this.showCalencdarStatus,
+      this.showMessageStatus
     ];
 
     this.manager.getAllManagers().subscribe((allManagers)=>{
@@ -84,11 +91,16 @@ export class LoginManagerComponent implements OnInit{
       this.loggedPersonName = foundManager.imie as string;
       this.loggedPersonSurname = foundManager.nazwisko as string;
 
+      this.loggedStatusChange.emit(true);
+
+
       this.loginAsManager.reset({});
     }else{
       alert("Podano złe dane");
     }
   }
+
+
 
   changeOutPutActiveList(buttonId: string){
     //ustawienie wszystkich elementów jako off
@@ -105,6 +117,8 @@ export class LoginManagerComponent implements OnInit{
 
   wyglogowano(){
     this.loginStatus = false;
+    this.loggedStatusChange.emit(false);
+    console.log(this.loggedStatus);
     //ustawienie wszystkich elementów jako off
     this.outPutActiveList = this.outPutActiveList.map(() => false);
   }

@@ -9,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class LoginPageComponent implements OnInit{
 
   selected: string;
+  loggedStatus: boolean;
 
   constructor(){
     this.selected = "worker";
+    this.loggedStatus = false;
   }
 
   ngOnInit(): void {
@@ -24,5 +26,14 @@ export class LoginPageComponent implements OnInit{
 
   loginManager(){
     this.selected = "manager";
+  }
+
+  handleLoggedStatusChange(status: boolean) {
+    this.loggedStatus = status;
+  }
+
+  test(){
+    console.log(this.loggedStatus);
+    console.log("zajebala mi skalaadaka");
   }
 }

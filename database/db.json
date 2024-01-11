@@ -320,6 +320,30 @@
       "receiverName": "Lukasz Kaliszewicz",
       "content": "testtttt123",
       "id": 25
+    },
+    {
+      "senderId": 1,
+      "senderName": "Lukasz Kaliszewicz",
+      "receiverId": 2,
+      "receiverName": "Olaf Topor",
+      "content": "Siema komar",
+      "id": 26
+    },
+    {
+      "senderId": 5,
+      "senderName": "Olaf Topor",
+      "receiverId": 2,
+      "receiverName": "Lukasz Kaliszewicz",
+      "content": "Elo",
+      "id": 27
+    },
+    {
+      "senderId": 1,
+      "senderName": "Lukasz Kaliszewicz",
+      "receiverId": 2,
+      "receiverName": "Karolina Malinowska",
+      "content": "Test 11.01.2024",
+      "id": 28
     }
   ]
 }
