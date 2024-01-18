@@ -1,13 +1,14 @@
 // message-list.component.ts
 import { Component, OnInit, Input } from '@angular/core';
 import { MessageService } from '../../message.service';
-import { MessageFilterPipe } from '../../pipes/message-filter.pipe'; // Import customowego Pipe
+import { MessageFilterPipe } from '../../pipes/message-filter.pipe';
+import { NotificationService } from '../../notification.service'; // Import serwisu powiadomień
 
 @Component({
   selector: 'app-message-list',
   templateUrl: './message-list.component.html',
   styleUrls: ['./message-list.component.css'],
-  providers: [MessageFilterPipe] // Dodaj Pipe do dostępnych providerów
+  providers: [MessageFilterPipe]
 })
 export class MessageListComponent implements OnInit {
 
@@ -17,25 +18,31 @@ export class MessageListComponent implements OnInit {
   @Input() loggedPersonSurname: string = "";
 
   showTypeStatus = 0;
-
   searchText: string = '';
 
-  constructor(private messageService: MessageService) { }
+  constructor(
+    private messageService: MessageService,
+    private notificationService: NotificationService // Dodaj serwis powiadomień
+  ) { }
 
   ngOnInit(): void {
-    // Wywołaj funkcję refreshMessages() co 5 sekund
     setInterval(() => {
       this.refreshMessages();
     }, 5000);
 
-    // Pierwsze pobranie wiadomości
     this.loadMessages();
   }
 
   loadMessages() {
     this.messageService.getMessages().subscribe(
       (data: any) => {
-        this.messages = data.reverse(); // Odwróć listę przed przypisaniem do zmiennej.
+        const newMessages = data.reverse();
+        if (newMessages.length > this.messages.length) {
+          // Wywołaj powiadomienie, jeśli ilość wiadomości się zwiększyła
+          const latestMessage = newMessages[0];
+          this.notificationService.showNotification(`Nowa wiadomość od ${latestMessage.senderName}`);
+        }
+        this.messages = newMessages;
       },
       (error) => {
         console.error('Wystąpił błąd podczas pobierania wiadomości:', error);
@@ -45,7 +52,6 @@ export class MessageListComponent implements OnInit {
 
   refreshMessages() {
     this.loadMessages();
-    console.log("Odświeżono wiadomości");
   }
 
   showOdebrane(){
@@ -66,7 +72,6 @@ export class MessageListComponent implements OnInit {
     this.messageService.deleteMessage(messageId).subscribe(
       () => {
         console.log('Wiadomość została usunięta.');
-        // Opcjonalnie możesz tutaj zaktualizować listę wiadomości po usunięciu.
         this.loadMessages();
       },
       (error) => {
@@ -79,5 +84,4 @@ export class MessageListComponent implements OnInit {
     console.log("id wiadomosci");
     console.log(id);
   }
-
 }
