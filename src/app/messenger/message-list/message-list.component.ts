@@ -2,7 +2,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MessageService } from '../../message.service';
 import { MessageFilterPipe } from '../../pipes/message-filter.pipe';
-import { NotificationService } from '../../notification.service'; // Import serwisu powiadomień
+import { NotificationService } from '../../notification.service';
 
 @Component({
   selector: 'app-message-list',
@@ -22,7 +22,7 @@ export class MessageListComponent implements OnInit {
 
   constructor(
     private messageService: MessageService,
-    private notificationService: NotificationService // Dodaj serwis powiadomień
+    private notificationService: NotificationService
   ) { }
 
   ngOnInit(): void {
@@ -38,7 +38,6 @@ export class MessageListComponent implements OnInit {
       (data: any) => {
         const newMessages = data.reverse();
         if (newMessages.length > this.messages.length) {
-          // Wywołaj powiadomienie, jeśli ilość wiadomości się zwiększyła
           const latestMessage = newMessages[0];
           this.notificationService.showNotification(`Nowa wiadomość od ${latestMessage.senderName}`);
         }
