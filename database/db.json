@@ -12,7 +12,7 @@
       "numerTelefonu": 125488523,
       "stanowidkoId": null,
       "dzialId": null,
-      "id": 5
+      "id": "5"
     },
     {
       "imie": "Karolina",
@@ -26,7 +26,7 @@
       "numerTelefonu": 759604819,
       "stanowidkoId": null,
       "dzialId": "",
-      "id": 6
+      "id": "6"
     },
     {
       "imie": "Rafał",
@@ -40,7 +40,7 @@
       "numerTelefonu": 895741232,
       "stanowidkoId": "",
       "dzialId": "",
-      "id": 7
+      "id": "7"
     },
     {
       "imie": "Kamil",
@@ -54,12 +54,12 @@
       "numerTelefonu": 857412369,
       "stanowidkoId": "",
       "dzialId": "",
-      "id": 8
+      "id": "8"
     }
   ],
   "managers": [
     {
-      "id": 1,
+      "id": "1",
       "imie": "Lukasz",
       "nazwisko": "Kaliszewicz",
       "stanowisko": "Młodszy Maanger",
@@ -107,7 +107,7 @@
           "email": "kamcz@gniezno.pl"
         }
       ],
-      "id": 1
+      "id": "1"
     },
     {
       "date": "2024-01-03T03:44",
@@ -149,12 +149,12 @@
           "email": "rafal@gmail.com"
         }
       ],
-      "id": 2
+      "id": "2"
     }
   ],
   "messages": [
     {
-      "id": 1,
+      "id": "1",
       "senderId": 6,
       "receiverId": 1,
       "senderName": "Karolina Malinowska",
@@ -162,7 +162,7 @@
       "content": "Cześć, potrzebuję wolnego dnia w najbliższym tygodniu."
     },
     {
-      "id": 2,
+      "id": "2",
       "senderId": 1,
       "receiverId": 6,
       "senderName": "Lukasz Kaliszewicz",
@@ -170,7 +170,7 @@
       "content": "Okej, sprawdzę i dam znać czy to możliwe. Dzięki za informację!"
     },
     {
-      "id": 3,
+      "id": "3",
       "senderId": 7,
       "receiverId": 1,
       "senderName": "Rafał Niedzwiedzki",
@@ -178,7 +178,7 @@
       "content": "Hej, czy mógłbym poprosić o zmianę w grafiku na przyszły tydzień?"
     },
     {
-      "id": 4,
+      "id": "4",
       "senderId": 1,
       "receiverId": 7,
       "senderName": "Lukasz Kaliszewicz",
@@ -191,7 +191,7 @@
       "receiverId": 20,
       "receiverName": "LukaszTest",
       "content": "Testowa wiadomość",
-      "id": 5
+      "id": "5"
     },
     {
       "senderId": 1,
@@ -199,7 +199,7 @@
       "receiverId": 20,
       "receiverName": "LukaszTest",
       "content": "Testowa wiadomość",
-      "id": 6
+      "id": "6"
     },
     {
       "senderId": 1,
@@ -207,7 +207,7 @@
       "receiverId": 20,
       "receiverName": "LukaszTest",
       "content": "test",
-      "id": 7
+      "id": "7"
     },
     {
       "senderId": 1,
@@ -215,7 +215,7 @@
       "receiverId": 2,
       "receiverName": "Testowy odbiorca",
       "content": "Testowa wiadomość z automatycznym id sendera\n",
-      "id": 8
+      "id": "8"
     },
     {
       "senderId": 1,
@@ -223,7 +223,7 @@
       "receiverId": 2,
       "receiverName": "Testowy odbiorca",
       "content": "lalallaaallalala",
-      "id": 9
+      "id": "9"
     },
     {
       "senderId": 1,
@@ -231,7 +231,7 @@
       "receiverId": 2,
       "receiverName": "Testowy odbiorca",
       "content": "lalallaaallalala",
-      "id": 10
+      "id": "10"
     },
     {
       "senderId": 1,
@@ -239,7 +239,7 @@
       "receiverId": 2,
       "receiverName": "Testowy odbiorca",
       "content": "lalallaaallalala",
-      "id": 11
+      "id": "11"
     },
     {
       "senderId": 1,
@@ -247,7 +247,7 @@
       "receiverId": 2,
       "receiverName": "Testowy odbiorca",
       "content": "lalallaaallalala",
-      "id": 12
+      "id": "12"
     },
     {
       "senderId": 1,
@@ -255,7 +255,7 @@
       "receiverId": 2,
       "receiverName": "Testowy odbiorca",
       "content": "12",
-      "id": 13
+      "id": "13"
     },
     {
       "senderId": 1,
@@ -263,7 +263,7 @@
       "receiverId": 2,
       "receiverName": "Testowy odbiorca",
       "content": "fxfdf",
-      "id": 14
+      "id": "14"
     },
     {
       "senderId": 1,
@@ -271,7 +271,7 @@
       "receiverId": 2,
       "receiverName": "Testowy odbiorca",
       "content": "d",
-      "id": 15
+      "id": "15"
     },
     {
       "senderId": 1,
@@ -279,7 +279,7 @@
       "receiverId": 2,
       "receiverName": "Rafał Niedzwiedzki",
       "content": "Cześć Rafał jak robotaju",
-      "id": 19
+      "id": "19"
     },
     {
       "senderId": 5,
@@ -287,7 +287,7 @@
       "receiverId": 2,
       "receiverName": "Olaf Topor",
       "content": "sdsadsad",
-      "id": 20
+      "id": "20"
     },
     {
       "senderId": 1,
@@ -295,7 +295,7 @@
       "receiverId": 2,
       "receiverName": "Olaf Topor",
       "content": "Cześć masz nową zmianę jak coś!",
-      "id": 21
+      "id": "21"
     },
     {
       "senderId": 5,
@@ -303,7 +303,7 @@
       "receiverId": 2,
       "receiverName": "Karolina Malinowska",
       "content": "sad",
-      "id": 23
+      "id": "23"
     },
     {
       "senderId": 5,
@@ -311,7 +311,7 @@
       "receiverId": 2,
       "receiverName": "Lukasz Kaliszewicz",
       "content": "Siema manager",
-      "id": 24
+      "id": "24"
     },
     {
       "senderId": 5,
@@ -319,7 +319,7 @@
       "receiverId": 2,
       "receiverName": "Lukasz Kaliszewicz",
       "content": "testtttt123",
-      "id": 25
+      "id": "25"
     },
     {
       "senderId": 1,
@@ -327,7 +327,7 @@
       "receiverId": 2,
       "receiverName": "Olaf Topor",
       "content": "Siema komar",
-      "id": 26
+      "id": "26"
     },
     {
       "senderId": 5,
@@ -335,7 +335,7 @@
       "receiverId": 2,
       "receiverName": "Lukasz Kaliszewicz",
       "content": "Elo",
-      "id": 27
+      "id": "27"
     },
     {
       "senderId": 1,
@@ -343,7 +343,39 @@
       "receiverId": 2,
       "receiverName": "Karolina Malinowska",
       "content": "Test 11.01.2024",
-      "id": 28
+      "id": "28"
+    },
+    {
+      "senderId": 1,
+      "senderName": "Lukasz Kaliszewicz",
+      "receiverId": 2,
+      "receiverName": "Olaf Topor",
+      "content": "testtowa dzisiaj",
+      "id": "29"
+    },
+    {
+      "senderId": 5,
+      "senderName": "Olaf Topor",
+      "receiverId": 2,
+      "receiverName": "Lukasz Kaliszewicz",
+      "content": "testttttt",
+      "id": "30"
+    },
+    {
+      "id": "d62b",
+      "senderId": "1",
+      "senderName": "Lukasz Kaliszewicz",
+      "receiverId": 2,
+      "receiverName": "Olaf Topor",
+      "content": "interval"
+    },
+    {
+      "id": "4375",
+      "senderId": "5",
+      "senderName": "Olaf Topor",
+      "receiverId": 2,
+      "receiverName": "Lukasz Kaliszewicz",
+      "content": "Interval"
     }
   ]
 }

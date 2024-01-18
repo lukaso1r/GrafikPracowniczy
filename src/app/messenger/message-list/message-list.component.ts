@@ -20,11 +20,15 @@ export class MessageListComponent implements OnInit {
 
   searchText: string = '';
 
-
-
   constructor(private messageService: MessageService) { }
 
   ngOnInit(): void {
+    // Wywołaj funkcję refreshMessages() co 5 sekund
+    setInterval(() => {
+      this.refreshMessages();
+    }, 5000);
+
+    // Pierwsze pobranie wiadomości
     this.loadMessages();
   }
 
@@ -41,6 +45,7 @@ export class MessageListComponent implements OnInit {
 
   refreshMessages() {
     this.loadMessages();
+    console.log("Odświeżono wiadomości");
   }
 
   showOdebrane(){
