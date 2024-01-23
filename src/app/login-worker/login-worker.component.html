@@ -3,7 +3,7 @@
   <form class="form-column" [formGroup]="loginAsWorker"   (ngSubmit)="loginAsWorkerFunc()">
     <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="imie" formControlName="imie" placeholder="Jan">
     <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="imie" formControlName="nazwisko" placeholder="Kowalski">
-    <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="imie" formControlName="haslo" placeholder="Hasło">
+    <input type="password" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="imie" formControlName="haslo" placeholder="Hasło">
     <!-- <div class="form-check mb-2 mr-sm-2">
       <input class="form-check-input" type="checkbox" id="inlineFormCheck">
       <label class="form-check-label" for="inlineFormCheck">Remember me</label>
@@ -15,20 +15,23 @@
 </div>
 
 <div id="manager-panel" *ngIf='loginStatus == true'>
-  <hr>
-  <h2>Panel pracownika - {{loggedWorkerInfo}}</h2>
+  <div id="workerNameDiv">
+    <h2>Panel pracownika - {{loggedWorkerInfo}}</h2>
+    <button id="wylogowano" (click)="wylogowano()" type="button" class="btn btn-primary mb-2">Wyloguj</button>
+  </div>
+
+
   <div id="managerMenu">
     <button id="showShiftListStatus" (click)="changeOutPutActiveList('0')" type="button" class="btn btn-primary mb-2">Wyświetl moje zmiany</button>
     <button id="showShiftListStatus" (click)="changeOutPutActiveList('1')" type="button" class="btn btn-primary mb-2">Wyświetl wiadomości</button>
-    <button id="wylogowano" (click)="wylogowano()" type="button" class="btn btn-primary mb-2">Wyloguj</button>
   </div>
   <div id="managerPanelOutput">
     <app-worker-shifts [workerInfo]="loggedWorkerInfo" id="showShiftListStatus" *ngIf='outPutActiveList[0] == true'></app-worker-shifts>
     <app-message-list *ngIf='outPutActiveList[1] == true'
-[loggedPersonId]="loggedPersonId"
-[loggedPersonName]="loggedPersonName"
-[loggedPersonSurname]="loggedPersonSurname"
->
+      [loggedPersonId]="loggedPersonId"
+      [loggedPersonName]="loggedPersonName"
+      [loggedPersonSurname]="loggedPersonSurname"
+    >
 </app-message-list>
   </div>
 

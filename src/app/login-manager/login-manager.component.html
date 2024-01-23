@@ -10,13 +10,15 @@
 </div>
 
 <div id="manager-panel" *ngIf='loginStatus == true'>
-  <h2>Panel zarządzania - {{loggedManagerInfo}}</h2>
+  <div id="workerNameDiv">
+    <h2>Panel pracownika - {{loggedManagerInfo}}</h2>
+    <button id="wylogowano" (click)="wyglogowano()" type="button" class="btn btn-primary mb-2">Wyloguj</button>
+  </div>
   <div id="managerMenu">
     <button id="showWorkerListStatus" (click)="changeOutPutActiveList('0')" type="button" class="btn btn-primary mb-2">Wyświetl listę pracowników</button>
     <button id="showAddWorkerStatus" (click)="changeOutPutActiveList('1')" type="button" class="btn btn-primary mb-2">Dodaj Pracownika</button>
     <button id="showCalencdarStatus" (click)="changeOutPutActiveList('2')" type="button" class="btn btn-primary mb-2">Przejdź do kalendarza</button>
     <button id="showCalencdarStatus" (click)="changeOutPutActiveList('3')" type="button" class="btn btn-primary mb-2">Przejdź do wiadomości</button>
-    <button id="wylogowano" (click)="wyglogowano()" type="button" class="btn btn-primary mb-2">Wyloguj</button>
   </div>
   <div id="managerPanelOutput">
     <app-list-workers id="showWorkerListStatus" *ngIf='outPutActiveList[0] == true'></app-list-workers>
