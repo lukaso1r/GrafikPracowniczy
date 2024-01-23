@@ -400,6 +400,30 @@
       "receiverId": 2,
       "receiverName": "Lukasz Kaliszewicz",
       "content": "ttpow3"
+    },
+    {
+      "id": "94bd",
+      "senderId": "5",
+      "senderName": "Olaf Topor",
+      "receiverId": 2,
+      "receiverName": "Lukasz Kaliszewicz",
+      "content": "testPowiadomienia"
+    },
+    {
+      "id": "d8ac",
+      "senderId": "5",
+      "senderName": "Olaf Topor",
+      "receiverId": 2,
+      "receiverName": "Lukasz Kaliszewicz",
+      "content": "test"
+    },
+    {
+      "id": "e132",
+      "senderId": "1",
+      "senderName": "Lukasz Kaliszewicz",
+      "receiverId": 2,
+      "receiverName": "Olaf Topor",
+      "content": "Siema eniu"
     }
   ]
 }
