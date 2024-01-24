@@ -13,12 +13,16 @@ import { NotificationService } from '../../notification.service';
 export class MessageListComponent implements OnInit {
 
   messages: any[] = [];
-  @Input() loggedPersonId: number = 2;
+  @Input() loggedPersonId: number = 0;
   @Input() loggedPersonName: string = "";
   @Input() loggedPersonSurname: string = "";
 
+
+
   showTypeStatus = 0;
   searchText: string = '';
+  localLenght = 0;
+  lastMess: string = "";
 
   constructor(
     private messageService: MessageService,
@@ -37,7 +41,15 @@ export class MessageListComponent implements OnInit {
     this.messageService.getMessages().subscribe(
       (data: any) => {
         const newMessages = data.reverse();
-        if (newMessages.length > this.messages.length) {
+        const nameAndSurname: string = this.loggedPersonName + " " + this.loggedPersonSurname;
+        if (newMessages.length > this.localLenght && newMessages[0].senderName!==nameAndSurname && this.lastMess!==newMessages[0].content) {
+          this.localLenght = newMessages.length;
+          this.lastMess = newMessages[0].content;
+          console.log(1);
+          console.log(newMessages.length);
+          console.log(2);
+          console.log(this.localLenght);
+          this.messages = newMessages;
           const latestMessage = newMessages[0];
           this.notificationService.showNotification(`Nowa wiadomość od ${latestMessage.senderName}`);
         }

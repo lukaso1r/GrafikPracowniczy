@@ -20,7 +20,7 @@
     <tbody>
       <tr *ngFor="let item of shiftList">
         <th scope="row">{{item.Id}}</th>
-        <td>{{item.Date | date:'medium'}}</td>
+        <td>{{item.Date | date:'medium':'':'pl'}}</td>
         <td>
           <div class="accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item">
