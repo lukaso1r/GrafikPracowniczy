@@ -282,14 +282,6 @@
       "id": "19"
     },
     {
-      "senderId": 5,
-      "senderName": "Olaf Topor",
-      "receiverId": 2,
-      "receiverName": "Olaf Topor",
-      "content": "sdsadsad",
-      "id": "20"
-    },
-    {
       "senderId": 1,
       "senderName": "Lukasz Kaliszewicz",
       "receiverId": 2,
@@ -301,41 +293,9 @@
       "senderId": 5,
       "senderName": "Olaf Topor",
       "receiverId": 2,
-      "receiverName": "Karolina Malinowska",
-      "content": "sad",
-      "id": "23"
-    },
-    {
-      "senderId": 5,
-      "senderName": "Olaf Topor",
-      "receiverId": 2,
       "receiverName": "Lukasz Kaliszewicz",
       "content": "Siema manager",
       "id": "24"
-    },
-    {
-      "senderId": 5,
-      "senderName": "Olaf Topor",
-      "receiverId": 2,
-      "receiverName": "Lukasz Kaliszewicz",
-      "content": "testtttt123",
-      "id": "25"
-    },
-    {
-      "senderId": 1,
-      "senderName": "Lukasz Kaliszewicz",
-      "receiverId": 2,
-      "receiverName": "Olaf Topor",
-      "content": "Siema komar",
-      "id": "26"
-    },
-    {
-      "senderId": 5,
-      "senderName": "Olaf Topor",
-      "receiverId": 2,
-      "receiverName": "Lukasz Kaliszewicz",
-      "content": "Elo",
-      "id": "27"
     },
     {
       "senderId": 1,
@@ -344,86 +304,6 @@
       "receiverName": "Karolina Malinowska",
       "content": "Test 11.01.2024",
       "id": "28"
-    },
-    {
-      "senderId": 1,
-      "senderName": "Lukasz Kaliszewicz",
-      "receiverId": 2,
-      "receiverName": "Olaf Topor",
-      "content": "testtowa dzisiaj",
-      "id": "29"
-    },
-    {
-      "senderId": 5,
-      "senderName": "Olaf Topor",
-      "receiverId": 2,
-      "receiverName": "Lukasz Kaliszewicz",
-      "content": "testttttt",
-      "id": "30"
-    },
-    {
-      "id": "d62b",
-      "senderId": "1",
-      "senderName": "Lukasz Kaliszewicz",
-      "receiverId": 2,
-      "receiverName": "Olaf Topor",
-      "content": "interval"
-    },
-    {
-      "id": "4375",
-      "senderId": "5",
-      "senderName": "Olaf Topor",
-      "receiverId": 2,
-      "receiverName": "Lukasz Kaliszewicz",
-      "content": "Interval"
-    },
-    {
-      "id": "0319",
-      "senderId": "5",
-      "senderName": "Olaf Topor",
-      "receiverId": 2,
-      "receiverName": "Lukasz Kaliszewicz",
-      "content": "powiadomienie"
-    },
-    {
-      "id": "0944",
-      "senderId": "5",
-      "senderName": "Olaf Topor",
-      "receiverId": 2,
-      "receiverName": "Lukasz Kaliszewicz",
-      "content": "ttpow"
-    },
-    {
-      "id": "073c",
-      "senderId": "5",
-      "senderName": "Olaf Topor",
-      "receiverId": 2,
-      "receiverName": "Lukasz Kaliszewicz",
-      "content": "ttpow3"
-    },
-    {
-      "id": "94bd",
-      "senderId": "5",
-      "senderName": "Olaf Topor",
-      "receiverId": 2,
-      "receiverName": "Lukasz Kaliszewicz",
-      "content": "testPowiadomienia"
-    },
-    {
-      "id": "d8ac",
-      "senderId": "5",
-      "senderName": "Olaf Topor",
-      "receiverId": 2,
-      "receiverName": "Lukasz Kaliszewicz",
-      "content": "test"
-    },
-    {
-      "id": "e132",
-      "senderId": "1",
-      "senderName": "Lukasz Kaliszewicz",
-      "receiverId": 2,
-      "receiverName": "Olaf Topor",
-      "content": "Siema eniu"
     }
   ]
 }

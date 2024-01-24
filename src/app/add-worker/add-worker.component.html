@@ -40,7 +40,7 @@
       Email jest niepoprawny.
     </div>
 
-    <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="haslo" formControlName="haslo" placeholder="Hasło" >
+    <input type="password" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="haslo" formControlName="haslo" placeholder="Hasło" >
     <div class="error" *ngIf="addWorker.controls['haslo'].errors?.['required']">
       Hasło jest wymagane.
     </div>
@@ -108,7 +108,7 @@
 
 
 
-    <input [disabled]="!addWorker.valid" type="submit" value="Dodaj Pracownika" />
+    <input [disabled]="!addWorker.valid" type="submit" value="Dodaj Pracownika" id="popUpSubmit" />
   </form>
 
 

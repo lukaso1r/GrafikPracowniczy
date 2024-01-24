@@ -1,6 +1,6 @@
 <div id="WorkersListDiv">
   <h3>Lista pracowników:</h3>
-  Wyszukaj po nazwisku: <input type="text" [(ngModel)]="searchValue" />
+  Wyszukaj po nazwisku: <input type="text" [(ngModel)]="searchValue" style="color: black;"/>
   <br><br>
   <table class="table table-striped" style="width: 100%; margin: 0 auto;">
     <thead>
@@ -22,7 +22,6 @@
       </tr>
     </tbody>
   </table>
-
 
   <div id="editWorkerPopUp" *ngIf="editWorkerPopUp==true">
     <h3>Edytuj pracownika</h3>
@@ -131,7 +130,7 @@
 
 
 
-      <input [disabled]="!editWorkerForm.valid" type="submit" value="Zapisz" />
+      <input [disabled]="!editWorkerForm.valid" type="submit" value="Zapisz" id="popUpSubmit"/>
     </form>
     <button (click)="stopEdit()">Anuluj</button>
   </div>

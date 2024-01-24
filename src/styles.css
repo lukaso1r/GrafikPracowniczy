@@ -17,11 +17,46 @@
   left: 29%;
   right: 29%;
   background-color: white;
-  padding: 6%;
+  padding: 2%;
   border: 2px solid black;
   border-radius: 25px;
   box-shadow: 0px 0px 39px 12px rgba(41, 76, 171, 1);
   color: black;
+}
+
+#editWorkerPopUp  #popUpSubmit{
+  color: white;
+  padding: 2% 5%;
+  width: auto;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: #023E8A;
+  border: 2px solid white;
+  border-radius: 60px;
+}
+
+#popUpSubmit{
+  color: white;
+  padding: 2% 5%;
+  width: auto;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: #023E8A;
+  border: 2px solid white;
+  border-radius: 60px;
+}
+
+#editWorkerPopUp button{
+  background-color: darkgray;
+  margin-top: 1rem;
+}
+
+input.ng-valid.ng-dirty.ng-touched {
+  color: black;
+}
+
+.error {
+  color: red;
 }
 
 #WorkersListDiv{
@@ -239,6 +274,11 @@ button.accordion-button.collapsed:hover {
   width: 80%;
   gap: 20px;
   margin: 0 auto;
+  color: black;
+}
+
+#sendMessageform option, optgroup{
+  color: black;
 }
 
 #content{
@@ -276,6 +316,10 @@ button:hover{
   text-align: center;
 }
 
+#messagesDiv {
+  text-align: left;
+}
+
 #addShiftForm{
   width: 50%;
   margin: 0 auto;
@@ -286,3 +330,51 @@ button:hover{
 }
 
 
+
+.messageSingle{
+  margin-left: 0.3rem;
+}
+
+.messageSingle hr{
+  margin-left: -0.3rem!important;
+}
+
+.messageSingle button{
+  margin-top: 0.6rem;
+}
+
+.messageSingle input{
+  width: 30%!important;
+  margin-bottom: 2rem!important;
+}
+
+#searchMessage{
+  width: 30%!important;
+  margin-bottom: 1rem!important;
+  margin-top: 1rem;
+}
+
+#WorkersListDiv > table > tbody > tr > td:nth-child(4) {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#editWorkerPopUp h3{
+  color: black;
+}
+
+option{
+  color: black;
+}
+
+input[type="submit"]{
+  background-color: #023E8A;
+  border: 2px solid white;
+  border-radius: 60px;
+  padding: 1% 4%;
+}
+
+textarea#content{
+  color: black;
+}
