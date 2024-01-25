@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { WorkersService } from '../workers.service';
+import { NodeService } from './../node-service.service';
 
 @Component({
   selector: 'app-login-worker',
@@ -10,7 +11,7 @@ import { WorkersService } from '../workers.service';
 export class LoginWorkerComponent implements OnInit{
 
   loginStatus: boolean = false;
-
+  currentTime: string = "";
   loggedStatus: boolean = false;
   @Output() loggedStatusChange = new EventEmitter<boolean>();
 
@@ -29,7 +30,7 @@ export class LoginWorkerComponent implements OnInit{
 
   outPutActiveList: boolean[];
 
-  constructor(private worker:WorkersService){
+  constructor(private worker:WorkersService, private NodeService: NodeService){
     this.showShiftList = false;
     this.showMessageList = true;
     this.outPutActiveList = [
@@ -39,12 +40,27 @@ export class LoginWorkerComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
+    
     this.worker.getAllWorkers().subscribe((allWorkers)=>{
       console.log(allWorkers);
       this.workersData = allWorkers;
     });
+
+    this.getCurrentTime();
+    // setInterval(() => {
+    //   this.getCurrentTime();
+    // }, 1000);
+  }
+
+  getCurrentTime() {
+    this.NodeService.getCurrentTime().subscribe(
+      (data: any) => {
+        this.currentTime  = data.time;
+      },
+      (error) => {
+        console.error('Błąd pobierania aktualnego czasu', error);
+      }
+    );
   }
 
   loginAsWorkerFunc(){

@@ -1,6 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {FormGroup, FormControl} from '@angular/forms';
 import {WorkersService} from '../workers.service';
+import { NodeService } from './../node-service.service';
+
 
 @Component({
   selector: 'app-login-manager',
@@ -10,7 +12,7 @@ import {WorkersService} from '../workers.service';
 export class LoginManagerComponent implements OnInit{
 
   loginStatus: boolean = false;
-
+  currentTime: string = "";
   // Informacje o zalogowanej osobie
   loggedPersonId = 0;
   loggedPersonName= "testImie";
@@ -28,7 +30,7 @@ export class LoginManagerComponent implements OnInit{
 
   outPutActiveList: boolean[];
 
-  constructor(private manager:WorkersService){
+  constructor(private manager:WorkersService, private NodeService: NodeService){
 
 
     this.showWorkerListStatus = false;
@@ -50,8 +52,7 @@ export class LoginManagerComponent implements OnInit{
   loggedManagerInfo: string = "";
 
   ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
+
 
 
     this.showWorkerListStatus = false;
@@ -71,6 +72,22 @@ export class LoginManagerComponent implements OnInit{
       this.managersData = allManagers;
     });
 
+    this.getCurrentTime();
+    // setInterval(() => {
+    //   this.getCurrentTime();
+    // }, 1000);
+
+  }
+
+  getCurrentTime() {
+    this.NodeService.getCurrentTime().subscribe(
+      (data: any) => {
+        this.currentTime  = data.time;
+      },
+      (error) => {
+        console.error('Błąd pobierania aktualnego czasu', error);
+      }
+    );
   }
 
   loginAsManagerFunc(){
