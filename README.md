@@ -4,11 +4,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 #Uruchamianie:
 
-Za pomocą visual studio code i dwóch terminali<br>
-1 terminal, należy się znajdować w katalogu głównym aplikacji i wpisać:
+Za pomocą visual studio code i trzech terminali<br>
+1 terminal, należy się znajdować w katalogu głównym aplikacji (/Grafik) i wpisać:
 <code>"npx ng serve"</code><br>
-2 terminal, należy się znajdować w katalogu "database" i wpisać:
+2 terminal, należy się znajdować w katalogu "database" (/Grafik/database) i wpisać:
 <code>"npx json-server --watch db.json"</code><br>
+3 terminal, należy się znajdować w katalogu "nodejs" (/Grafik/src/nodejs>) i wpisać:
+<code>"node index.js"</code><br>
 
 Następnie w wyszukiwarce wpisać http://localhost:8080
 
